@@ -9,6 +9,7 @@ interface DockItem {
   icon: any;
   href?: string;
   action?: () => void;
+  disabled?: boolean;
   accentColor: string;
 }
 
@@ -50,17 +51,17 @@ export const MacDock: React.FC = () => {
     },
     {
       id: 'speakers',
-      title: 'Visionary Speakers',
+      title: 'Speakers · Coming soon',
       icon: Users,
-      href: sitePath('speakers'),
-      accentColor: 'var(--ted-red)',
+      disabled: true,
+      accentColor: '#4b5563',
     },
     {
       id: 'team',
-      title: 'Working Team',
+      title: 'Team · Coming soon',
       icon: Users,
-      href: sitePath('team'),
-      accentColor: 'var(--greek-gold)',
+      disabled: true,
+      accentColor: '#4b5563',
     },
     {
       id: 'schedule',
@@ -232,6 +233,23 @@ export const MacDock: React.FC = () => {
       >
         {dockItems.map((item) => {
           const Icon = item.icon;
+          const dockLinkStyle: React.CSSProperties = {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            height: '100%',
+            borderRadius: '50%',
+            background: item.disabled ? 'rgba(71, 85, 105, 0.08)' : 'var(--bg-surface)',
+            border: `1.5px solid ${item.accentColor}`,
+            color: item.accentColor,
+            textDecoration: 'none',
+            boxShadow: item.disabled ? 'none' : '0 2px 8px rgba(0, 0, 0, 0.1)',
+            transition: 'background 0.2s, transform 0.2s',
+            cursor: item.disabled ? 'not-allowed' : 'pointer',
+            opacity: item.disabled ? 0.5 : 1,
+          };
+
           return (
             <li
               key={item.id}
@@ -243,32 +261,25 @@ export const MacDock: React.FC = () => {
                 margin: '0 4px',
               }}
             >
-              <a
-                className="toolbarLink cursor-target"
-                href={item.href || '#!'}
-                onClick={(e) => {
-                  if (item.action) {
-                    e.preventDefault();
-                    item.action();
-                  }
-                }}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '50%',
-                  background: 'var(--bg-surface)',
-                  border: `1.5px solid ${item.accentColor}`,
-                  color: item.accentColor,
-                  textDecoration: 'none',
-                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-                  transition: 'background 0.2s, transform 0.2s',
-                }}
-              >
-                <Icon size={18} />
-              </a>
+              {item.disabled ? (
+                <span className="toolbarLink" aria-disabled="true" style={dockLinkStyle}>
+                  <Icon size={18} />
+                </span>
+              ) : (
+                <a
+                  className="toolbarLink cursor-target"
+                  href={item.href || '#!'}
+                  onClick={(e) => {
+                    if (item.action) {
+                      e.preventDefault();
+                      item.action();
+                    }
+                  }}
+                  style={dockLinkStyle}
+                >
+                  <Icon size={18} />
+                </a>
+              )}
             </li>
           );
         })}

@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef, useState, type ReactNode } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -8,23 +8,16 @@ import { Hero } from './components/Hero';
 import { CountdownSection } from './components/CountdownSection';
 import { ThemeManifesto } from './components/ThemeManifesto';
 import { HorizontalScroll } from './components/HorizontalScroll';
-import { Speakers } from './components/Speakers';
-import { Team } from './components/Team';
 import { Schedule } from './components/Schedule';
 import { LegacyBanner } from './components/LegacyBanner';
 import { Venue } from './components/Venue';
 import { Footer } from './components/Footer';
 import { MacDock } from './components/MacDock';
-import { currentRoute, sitePath } from './sitePath';
 
 // These two sections pull in the heaviest interactive dependencies (Motion and
 // the animated wall). Keep them out of the critical path until they are needed.
 const MerakiGallery = lazy(() => import('./components/MerakiGallery'));
 const DitherVeil = lazy(() => import('./components/DitherVeil'));
-const RegistrationModal = lazy(() =>
-  import('./components/RegistrationModal').then(({ RegistrationModal: Component }) => ({ default: Component })),
-);
-
 const GalleryPlaceholder = () => (
   <section
     aria-hidden="true"
@@ -67,10 +60,6 @@ const DeferredGallery = () => {
 };
 
 export function App() {
-  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
-  const pathname = currentRoute();
-  const activePage = pathname === '/speakers' ? 'speakers' : pathname === '/team' ? 'team' : 'home';
-
   useEffect(() => {
     // Register GSAP plugins
     gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
@@ -141,48 +130,34 @@ export function App() {
         style={{ bottom: '10%', left: '-150px', width: '500px', height: '500px' }}
       />
 
-      {/* Minimal Top Header: Logo, Season Switcher, Claim Pass */}
-      <Navbar activePage={activePage} onOpenRegister={() => setIsRegisterOpen(true)} />
+      {/* Minimal Top Header */}
+      <Navbar activePage="home" />
 
       {/* Page Sections */}
       <main style={{ position: 'relative', zIndex: 1 }}>
-        {activePage === 'speakers' ? (
-          <>
-            <PageIntro
-              title={<>Meet the <span className="text-gradient-meraki">speakers</span></>}
-              copy="Six distinct voices. One shared devotion to ideas that leave something of themselves with every listener."
-            />
-            <Speakers />
-          </>
-        ) : activePage === 'team' ? (
-          <Team />
-        ) : (
-          <>
-            {/* Minimal Hero */}
-            <Hero />
+        {/* Minimal Hero */}
+        <Hero />
 
-            {/* Dedicated Separate Countdown Section */}
-            <CountdownSection onOpenRegister={() => setIsRegisterOpen(true)} />
+        {/* Dedicated Separate Countdown Section */}
+        <CountdownSection />
 
-            {/* Theme Manifesto */}
-            <ThemeManifesto />
+        {/* Theme Manifesto */}
+        <ThemeManifesto />
 
-            {/* Horizontal SplitText containerAnimation element with Meraki theme */}
-            <HorizontalScroll />
+        {/* Horizontal SplitText containerAnimation element with Meraki theme */}
+        <HorizontalScroll />
 
-            {/* 9th Oct Itinerary */}
-            <Schedule />
+        {/* Schedule holding area — details will be added once confirmed */}
+        <Schedule />
 
-            {/* Season 1 Legacy Archive Showcase */}
-            <LegacyBanner />
+        {/* Season 1 Legacy Archive Showcase */}
+        <LegacyBanner />
 
-            {/* Endless Perspective DriftWall Gallery */}
-            <DeferredGallery />
+        {/* Endless Perspective DriftWall Gallery */}
+        <DeferredGallery />
 
-            {/* Campus Venue */}
-            <Venue />
-          </>
-        )}
+        {/* Campus Venue */}
+        <Venue />
       </main>
 
       {/* Themed macOS Dock at bottom */}
@@ -191,24 +166,8 @@ export function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Interactive Pass Registration Modal */}
-      {isRegisterOpen && (
-        <Suspense fallback={null}>
-          <RegistrationModal onClose={() => setIsRegisterOpen(false)} isOpen />
-        </Suspense>
-      )}
     </div>
   );
 }
-
-const PageIntro = ({ title, copy }: { title: ReactNode; copy: string }) => (
-  <section className="directory-intro">
-    <div className="container directory-intro__content">
-      <h1>{title}</h1>
-      <p>{copy}</p>
-      <a href={sitePath()} className="btn-outline directory-intro__back">Return to the Meraki home</a>
-    </div>
-  </section>
-);
 
 export default App;

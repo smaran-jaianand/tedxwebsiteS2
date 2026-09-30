@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Season 2 image placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#08080a"/>
+      <stop offset="1" stop-color="#21070d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g transform="translate(600 400)" fill="none">
+    <ellipse rx="410" ry="145" stroke="#e2c17c" stroke-opacity=".28" stroke-width="3"/>
+    <ellipse rx="145" ry="410" stroke="#eb0028" stroke-opacity=".28" stroke-width="3"/>
+    <ellipse rx="330" ry="330" transform="rotate(45)" stroke="#ffffff" stroke-opacity=".08"/>
+    <ellipse rx="330" ry="330" transform="rotate(-45)" stroke="#ffffff" stroke-opacity=".08"/>
+    <circle r="76" fill="#e2c17c" fill-opacity=".1" stroke="#e2c17c" stroke-opacity=".42"/>
+  </g>
+</svg>

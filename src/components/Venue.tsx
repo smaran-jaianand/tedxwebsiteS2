@@ -37,7 +37,7 @@ export const Venue: React.FC = () => {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '14px' }}>
                 <div style={{ padding: '14px', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(226, 193, 124, 0.15)' }}>
                   <div style={{ fontSize: '11px', color: 'var(--greek-gold)', fontFamily: 'var(--font-classical)', letterSpacing: '0.06em' }}>CAPACITY</div>
-                  <div style={{ fontSize: '18px', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-classical)' }}>850 Delegates</div>
+                  <div style={{ fontSize: '18px', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-classical)' }}>300 Delegates</div>
                 </div>
                 <div style={{ padding: '14px', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(226, 193, 124, 0.15)' }}>
                   <div style={{ fontSize: '11px', color: 'var(--greek-gold)', fontFamily: 'var(--font-classical)', letterSpacing: '0.06em' }}>ACOUSTICS</div>
@@ -79,7 +79,7 @@ export const Venue: React.FC = () => {
                 decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&w=600&q=80';
+                  (e.target as HTMLImageElement).src = sitePath('placeholders/meraki-01.svg');
                 }}
               />
             </div>
@@ -91,7 +91,7 @@ export const Venue: React.FC = () => {
                 decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80';
+                  (e.target as HTMLImageElement).src = sitePath('placeholders/meraki-02.svg');
                 }}
               />
             </div>
@@ -103,7 +103,7 @@ export const Venue: React.FC = () => {
                 decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80';
+                  (e.target as HTMLImageElement).src = sitePath('placeholders/meraki-03.svg');
                 }}
               />
             </div>

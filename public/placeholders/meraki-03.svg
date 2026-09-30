@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Season 2 image placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#16070b"/>
+      <stop offset=".55" stop-color="#070709"/>
+      <stop offset="1" stop-color="#121015"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g fill="none" stroke="#e2c17c" stroke-opacity=".23">
+    <path d="M155 620 600 140l445 480Z" stroke-width="3"/>
+    <path d="M290 620 600 290l310 330Z"/>
+    <circle cx="600" cy="445" r="205"/>
+    <circle cx="600" cy="445" r="95"/>
+  </g>
+  <path d="M600 140 155 620h890Z" fill="#eb0028" fill-opacity=".075"/>
+  <circle cx="600" cy="445" r="18" fill="#eb0028"/>
+</svg>

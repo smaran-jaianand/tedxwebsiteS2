@@ -2,14 +2,14 @@ import { ArrowUpRight, Film, History } from 'lucide-react';
 import { sitePath } from '../sitePath';
 
 const ARCHIVE_IMAGES = [
-  { src: sitePath('season1/img/simgs/anjan.jpg'), alt: 'Season 1 TEDxSIU speaker' },
-  { src: sitePath('season1/img/sliderimgs/insideaudi.jpeg'), alt: 'Season 1 auditorium' },
-  { src: sitePath('season1/img/profileimgs/adwita.jpg'), alt: 'Season 1 organising team member' },
-  { src: sitePath('season1/img/simgs/emmanual.jpeg'), alt: 'Season 1 TEDxSIU speaker' },
-  { src: sitePath('season1/img/sliderimgs/maingate.jpeg'), alt: 'Symbiosis campus entrance' },
-  { src: sitePath('season1/img/simgs/sandeep.jpg'), alt: 'Season 1 TEDxSIU speaker' },
-  { src: sitePath('season1/img/profileimgs/riya-sit.jpg'), alt: 'Season 1 organising team member' },
-  { src: sitePath('season1/img/simgs/harsha-d.jpg'), alt: 'Season 1 TEDxSIU speaker' },
+  { src: sitePath('placeholders/meraki-01.svg'), alt: 'Archive image placeholder' },
+  { src: sitePath('placeholders/meraki-02.svg'), alt: 'Archive image placeholder' },
+  { src: sitePath('placeholders/meraki-03.svg'), alt: 'Archive image placeholder' },
+  { src: sitePath('placeholders/meraki-04.svg'), alt: 'Archive image placeholder' },
+  { src: sitePath('placeholders/meraki-05.svg'), alt: 'Archive image placeholder' },
+  { src: sitePath('placeholders/meraki-02.svg'), alt: 'Archive image placeholder' },
+  { src: sitePath('placeholders/meraki-04.svg'), alt: 'Archive image placeholder' },
+  { src: sitePath('placeholders/meraki-01.svg'), alt: 'Archive image placeholder' },
 ];
 
 export const LegacyBanner = () => {
@@ -22,8 +22,8 @@ export const LegacyBanner = () => {
         </div>
 
         <div className="season-one-gallery" aria-label="Season 1 archive highlights">
-          {ARCHIVE_IMAGES.map(image => (
-            <div className="season-one-gallery__item" key={image.src}>
+          {ARCHIVE_IMAGES.map((image, index) => (
+            <div className="season-one-gallery__item" key={`${image.src}-${index}`}>
               <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
             </div>
           ))}

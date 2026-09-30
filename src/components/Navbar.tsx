@@ -3,11 +3,10 @@ import { Ticket, History, ArrowUpRight, Sparkles } from 'lucide-react';
 import { sitePath } from '../sitePath';
 
 interface NavbarProps {
-  onOpenRegister: () => void;
   activePage: 'home' | 'speakers' | 'team';
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister, activePage }) => {
+export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
   const [scrolled, setScrolled] = useState(false);
   const frameRef = useRef<number | null>(null);
 
@@ -29,16 +28,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister, activePage }) =>
   }, []);
 
   const isHome = activePage === 'home';
-  const navLinkStyle = (page: 'speakers' | 'team'): React.CSSProperties => ({
-    color: activePage === page ? 'var(--greek-gold)' : 'var(--text-muted)',
+  const disabledNavLinkStyle: React.CSSProperties = {
+    color: '#525866',
     fontFamily: 'var(--font-mono)',
     fontSize: '11px',
     fontWeight: 700,
     letterSpacing: '0.08em',
-    textDecoration: 'none',
     textTransform: 'uppercase',
-    transition: 'color 0.2s ease',
-  });
+    cursor: 'not-allowed',
+    opacity: 0.62,
+    userSelect: 'none',
+  };
 
   return (
     <header
@@ -103,8 +103,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister, activePage }) =>
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
 
           <nav className="navbar-page-links" aria-label="Season 2 pages">
-            <a href={sitePath('speakers')} style={navLinkStyle('speakers')}>Speakers</a>
-            <a href={sitePath('team')} style={navLinkStyle('team')}>Team</a>
+            <span aria-disabled="true" title="Speakers coming soon" style={disabledNavLinkStyle}>Speakers</span>
+            <span aria-disabled="true" title="Team page coming soon" style={disabledNavLinkStyle}>Team</span>
           </nav>
           
           {/* Season Switcher Pill */}
@@ -160,12 +160,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister, activePage }) =>
 
           {/* Claim Pass Button */}
           <button
-            onClick={onOpenRegister}
-            className="btn-primary cursor-target"
-            style={{ padding: '10px 22px', fontSize: '13px', fontWeight: 700 }}
+            type="button"
+            disabled
+            aria-disabled="true"
+            title="Claim Pass coming soon"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '10px 22px',
+              borderRadius: '9999px',
+              border: '1px solid #4b5563',
+              background: 'rgba(71, 85, 105, 0.12)',
+              color: '#6b7280',
+              fontSize: '13px',
+              fontWeight: 700,
+              cursor: 'not-allowed',
+              opacity: 0.68,
+            }}
           >
             <Ticket size={15} />
-            <span>Claim Pass</span>
+            <span>Claim Pass · Soon</span>
           </button>
 
         </div>

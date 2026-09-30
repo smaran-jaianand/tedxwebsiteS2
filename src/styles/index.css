@@ -817,6 +817,16 @@ body {
   line-height: 1.65;
 }
 
+.schedule-section--holding {
+  display: flex;
+  min-height: 58vh;
+  align-items: center;
+}
+
+.schedule-section--holding .schedule-section__header {
+  margin-bottom: 0;
+}
+
 .schedule-timeline {
   position: relative;
   max-width: 1120px;

@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Ticket } from 'lucide-react';
 
-interface CountdownSectionProps {
-  onOpenRegister: () => void;
-}
-
-export const CountdownSection: React.FC<CountdownSectionProps> = ({ onOpenRegister }) => {
+export const CountdownSection: React.FC = () => {
   // Official Event Date: 9th October 2026
   const targetDate = new Date('2026-10-09T09:00:00+05:30').getTime();
   const [timeLeft, setTimeLeft] = useState({ days: 16, hours: 22, minutes: 30, seconds: 15 });
@@ -85,7 +81,7 @@ export const CountdownSection: React.FC<CountdownSectionProps> = ({ onOpenRegist
               </div>
               <div>
                 <div style={{ fontSize: '24px', fontWeight: 800, fontFamily: 'var(--font-classical)', color: 'var(--greek-gold)' }}>
-                  850
+                  300
                 </div>
                 <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Seated Delegates</div>
               </div>
@@ -93,13 +89,31 @@ export const CountdownSection: React.FC<CountdownSectionProps> = ({ onOpenRegist
                 <div style={{ fontSize: '24px', fontWeight: 800, fontFamily: 'var(--font-classical)', color: 'var(--ted-red)' }}>
                   18 MIN
                 </div>
-                <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Catalytic Talks</div>
+                <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Maximum Talk Length</div>
               </div>
             </div>
 
-            <button onClick={onOpenRegister} className="btn-primary cursor-target" style={{ padding: '12px 28px' }}>
+            <button
+              type="button"
+              disabled
+              aria-disabled="true"
+              title="Registration coming soon"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '12px 28px',
+                borderRadius: '9999px',
+                border: '1px solid #4b5563',
+                background: 'rgba(71, 85, 105, 0.12)',
+                color: '#6b7280',
+                fontWeight: 700,
+                cursor: 'not-allowed',
+                opacity: 0.68,
+              }}
+            >
               <Ticket size={16} />
-              Reserve Your Seat Ahead of Curtains
+              Registration Coming Soon
             </button>
           </div>
       </div>

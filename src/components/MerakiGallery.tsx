@@ -2,23 +2,18 @@ import React from 'react';
 import DriftWall, { type DriftWallItem } from './DriftWall';
 import { sitePath } from '../sitePath';
 
-const GALLERY_ITEMS: DriftWallItem[] = [
-  { image: sitePath('theme/poster_meraki.png'), title: 'Persephone & Hades Mythos' },
-  { image: sitePath('theme/renaissance_creation.jpg'), title: 'Soul. Creativity. Love.' },
-  { image: sitePath('theme/halo_renaissance.png'), title: 'Devotion to Craft' },
-  { image: sitePath('brand/sliderimgs/audi.jpeg'), title: 'SIUH Main Auditorium' },
-  { image: sitePath('brand/sliderimgs/insideaudi.jpeg'), title: 'The Red Circle Stage' },
-  { image: sitePath('brand/sliderimgs/maingate.jpeg'), title: 'SIUH Grand Campus' },
-  { image: sitePath('brand/sliderimgs/allhostels.jpeg'), title: 'Campus Sanctuary' },
-  { image: sitePath('brand/sliderimgs/hostel.jpeg'), title: 'Academic Life' },
-  { image: sitePath('brand/tedxsiuhyd.jpg'), title: 'TEDxSIU Hyderabad' },
-  { image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80', title: 'Dr. Helene Vassos' },
-  { image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80', title: 'Arjun Somayaji' },
-  { image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80', title: 'Dr. Thalia Sterling' },
-  { image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80', title: 'Lysander Croft' },
-  { image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80', title: 'Meera Nambiar' },
-  { image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=80', title: 'Ideas Worth Spreading' },
+const PLACEHOLDER_IMAGES = [
+  sitePath('placeholders/meraki-01.svg'),
+  sitePath('placeholders/meraki-02.svg'),
+  sitePath('placeholders/meraki-03.svg'),
+  sitePath('placeholders/meraki-04.svg'),
+  sitePath('placeholders/meraki-05.svg'),
 ];
+
+const GALLERY_ITEMS: DriftWallItem[] = Array.from({ length: 15 }, (_, index) => ({
+  image: PLACEHOLDER_IMAGES[index % PLACEHOLDER_IMAGES.length],
+  title: 'Season 2 visual placeholder',
+}));
 
 export const MerakiGallery: React.FC = () => {
   return (
@@ -28,7 +23,7 @@ export const MerakiGallery: React.FC = () => {
           Visual Echoes of <span className="text-gradient-meraki">Meraki</span>
         </h2>
         <p style={{ color: 'var(--text-muted)', fontSize: '16px', fontFamily: 'var(--font-editorial)', fontStyle: 'italic', maxWidth: '640px', margin: '0 auto' }}>
-          An endless 3D drifting tapestry of campus heritage, Hellenic mythos, and orators converging on 9th October.
+          Season 2 photographs and visual stories will appear here as they are released.
         </p>
       </div>
 
