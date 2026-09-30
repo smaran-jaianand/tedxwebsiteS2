@@ -1,9 +1,10 @@
 import React from 'react';
 import { ArrowUpRight, Heart, Globe, Mail, Feather } from 'lucide-react';
+import { currentRoute, sitePath } from '../sitePath';
 
 export const Footer: React.FC = () => {
-  const isHome = window.location.pathname.replace(/\/+$/, '') === '' || window.location.pathname === '/';
-  const homeHref = (anchor: string) => (isHome ? anchor : `/${anchor}`);
+  const isHome = currentRoute() === '/';
+  const homeHref = (anchor: string) => (isHome ? anchor : sitePath(anchor));
 
   return (
     <footer
@@ -29,7 +30,7 @@ export const Footer: React.FC = () => {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <img
-                src="/theme/tedx_siuh_logo.png"
+                src={sitePath('theme/tedx_siuh_logo.png')}
                 alt="TEDx SIU Hyderabad"
                 style={{ height: '34px', width: 'auto', objectFit: 'contain' }}
               />
@@ -64,8 +65,8 @@ export const Footer: React.FC = () => {
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <li><a href={homeHref('#hero')} style={footerLinkStyle}>Prologue (9th Oct)</a></li>
               <li><a href={homeHref('#theme')} style={footerLinkStyle}>The Meraki Creed</a></li>
-              <li><a href="/speakers" style={footerLinkStyle}>Masters of the Roster</a></li>
-              <li><a href="/team" style={footerLinkStyle}>The Working Team</a></li>
+              <li><a href={sitePath('speakers')} style={footerLinkStyle}>Masters of the Roster</a></li>
+              <li><a href={sitePath('team')} style={footerLinkStyle}>The Working Team</a></li>
               <li><a href={homeHref('#schedule')} style={footerLinkStyle}>The Itinerary of Acts</a></li>
               <li><a href={homeHref('#venue')} style={footerLinkStyle}>SIU Hyderabad Campus</a></li>
             </ul>
@@ -78,17 +79,17 @@ export const Footer: React.FC = () => {
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <li>
-                <a href="/season1/index.html" target="_blank" rel="noopener noreferrer" style={{ ...footerLinkStyle, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                <a href={sitePath('season1/index.html')} target="_blank" rel="noopener noreferrer" style={{ ...footerLinkStyle, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                   Season 1 Homepage <ArrowUpRight size={14} />
                 </a>
               </li>
               <li>
-                <a href="/season1/speakers.html" target="_blank" rel="noopener noreferrer" style={{ ...footerLinkStyle, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                <a href={sitePath('season1/speakers.html')} target="_blank" rel="noopener noreferrer" style={{ ...footerLinkStyle, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                   Inaugural Speakers <ArrowUpRight size={14} />
                 </a>
               </li>
               <li>
-                <a href="/season1/team.html" target="_blank" rel="noopener noreferrer" style={{ ...footerLinkStyle, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                <a href={sitePath('season1/team.html')} target="_blank" rel="noopener noreferrer" style={{ ...footerLinkStyle, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                   Founding Team <ArrowUpRight size={14} />
                 </a>
               </li>

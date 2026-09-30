@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Ticket, History, ArrowUpRight, Sparkles } from 'lucide-react';
+import { sitePath } from '../sitePath';
 
 interface NavbarProps {
   onOpenRegister: () => void;
@@ -59,12 +60,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister, activePage }) =>
         
         {/* TEDx Logo + Meraki pill */}
         <a
-          href={isHome ? '#hero' : '/'}
+          href={isHome ? '#hero' : sitePath()}
           className="cursor-target"
           style={{ display: 'flex', alignItems: 'center', gap: '14px', textDecoration: 'none' }}
         >
           <img
-            src="/theme/tedx_siuh_logo.png"
+            src={sitePath('theme/tedx_siuh_logo.png')}
             alt="TEDx SIU Hyderabad"
             style={{
               height: '34px',
@@ -102,8 +103,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister, activePage }) =>
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
 
           <nav className="navbar-page-links" aria-label="Season 2 pages">
-            <a href="/speakers" style={navLinkStyle('speakers')}>Speakers</a>
-            <a href="/team" style={navLinkStyle('team')}>Team</a>
+            <a href={sitePath('speakers')} style={navLinkStyle('speakers')}>Speakers</a>
+            <a href={sitePath('team')} style={navLinkStyle('team')}>Team</a>
           </nav>
           
           {/* Season Switcher Pill */}
@@ -118,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister, activePage }) =>
             }}
           >
             <a
-              href="/season1/index.html"
+              href={sitePath('season1/index.html')}
               target="_blank"
               rel="noopener noreferrer"
               className="cursor-target"

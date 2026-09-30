@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { Home, Flame, Clock, Type, Users, Calendar, MapPin, History, ArrowUp } from 'lucide-react';
+import { currentRoute, sitePath } from '../sitePath';
 
 interface DockItem {
   id: string;
@@ -14,8 +15,8 @@ interface DockItem {
 export const MacDock: React.FC = () => {
   const dockRef = useRef<HTMLUListElement>(null);
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
-  const isHome = window.location.pathname.replace(/\/+$/, '') === '' || window.location.pathname === '/';
-  const homeHref = (anchor: string) => (isHome ? anchor : `/${anchor}`);
+  const isHome = currentRoute() === '/';
+  const homeHref = (anchor: string) => (isHome ? anchor : sitePath(anchor));
 
   const dockItems: DockItem[] = [
     {
@@ -51,14 +52,14 @@ export const MacDock: React.FC = () => {
       id: 'speakers',
       title: 'Visionary Speakers',
       icon: Users,
-      href: '/speakers',
+      href: sitePath('speakers'),
       accentColor: 'var(--ted-red)',
     },
     {
       id: 'team',
       title: 'Working Team',
       icon: Users,
-      href: '/team',
+      href: sitePath('team'),
       accentColor: 'var(--greek-gold)',
     },
     {
@@ -79,9 +80,9 @@ export const MacDock: React.FC = () => {
       id: 'season1',
       title: 'Season 1 Legacy Archive',
       icon: History,
-      href: '/season1/index.html',
+      href: sitePath('season1/index.html'),
       action: () => {
-        window.open('/season1/index.html', '_blank');
+        window.open(sitePath('season1/index.html'), '_blank');
       },
       accentColor: 'var(--greek-gold)',
     },

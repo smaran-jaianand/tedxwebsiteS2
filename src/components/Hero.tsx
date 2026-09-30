@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { animate, stagger } from 'animejs';
+import { sitePath } from '../sitePath';
 
 export const Hero: React.FC = () => {
   const headlineRef = useRef<HTMLHeadingElement>(null);
@@ -51,7 +52,7 @@ export const Hero: React.FC = () => {
           pointerEvents: 'none',
           zIndex: 0,
           opacity: 0.35,
-          background: 'radial-gradient(circle, rgba(226, 193, 124, 0.2) 0%, rgba(235, 0, 40, 0.12) 45%, transparent 70%), url("/theme/halo_renaissance.png") center/contain no-repeat',
+          background: `radial-gradient(circle, rgba(226, 193, 124, 0.2) 0%, rgba(235, 0, 40, 0.12) 45%, transparent 70%), url("${sitePath('theme/halo_renaissance.png')}") center/contain no-repeat`,
         }}
       />
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navigation, Bus, Plane, ShieldCheck } from 'lucide-react';
+import { sitePath } from '../sitePath';
 
 export const Venue: React.FC = () => {
   return (
@@ -72,7 +73,7 @@ export const Venue: React.FC = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
             <div style={{ borderRadius: '18px', overflow: 'hidden', height: '200px', border: '1px solid rgba(226, 193, 124, 0.2)' }}>
               <img
-                src="/brand/sliderimgs/audi.jpeg"
+                src={sitePath('brand/sliderimgs/audi.jpeg')}
                 alt="SIUH Auditorium"
                 loading="lazy"
                 decoding="async"
@@ -84,7 +85,7 @@ export const Venue: React.FC = () => {
             </div>
             <div style={{ borderRadius: '18px', overflow: 'hidden', height: '200px', border: '1px solid rgba(226, 193, 124, 0.2)' }}>
               <img
-                src="/brand/sliderimgs/maingate.jpeg"
+                src={sitePath('brand/sliderimgs/maingate.jpeg')}
                 alt="SIUH Main Gate"
                 loading="lazy"
                 decoding="async"
@@ -96,7 +97,7 @@ export const Venue: React.FC = () => {
             </div>
             <div style={{ borderRadius: '18px', overflow: 'hidden', height: '200px', gridColumn: 'span 2', border: '1px solid rgba(226, 193, 124, 0.2)' }}>
               <img
-                src="/brand/sliderimgs/allhostels.jpeg"
+                src={sitePath('brand/sliderimgs/allhostels.jpeg')}
                 alt="SIUH Campus View"
                 loading="lazy"
                 decoding="async"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowLeft, Sparkles, Users } from 'lucide-react';
+import { sitePath } from '../sitePath';
 
 type TeamMember = {
   name: string;
@@ -103,7 +104,7 @@ export const Team: React.FC = () => {
         </p>
 
         <div className="team-page__hero-actions">
-          <a href="/" className="btn-outline"><ArrowLeft size={15} /> Back to home</a>
+          <a href={sitePath()} className="btn-outline"><ArrowLeft size={15} /> Back to home</a>
           <span><Users size={16} /> {memberCount} makers across {TEAM_CIRCLES.length} circles</span>
         </div>
       </div>

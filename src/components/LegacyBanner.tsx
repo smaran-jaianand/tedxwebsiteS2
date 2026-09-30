@@ -1,14 +1,15 @@
 import { ArrowUpRight, Film, History } from 'lucide-react';
+import { sitePath } from '../sitePath';
 
 const ARCHIVE_IMAGES = [
-  { src: '/season1/img/simgs/anjan.jpg', alt: 'Season 1 TEDxSIU speaker' },
-  { src: '/season1/img/sliderimgs/insideaudi.jpeg', alt: 'Season 1 auditorium' },
-  { src: '/season1/img/profileimgs/adwita.jpg', alt: 'Season 1 organising team member' },
-  { src: '/season1/img/simgs/emmanual.jpeg', alt: 'Season 1 TEDxSIU speaker' },
-  { src: '/season1/img/sliderimgs/maingate.jpeg', alt: 'Symbiosis campus entrance' },
-  { src: '/season1/img/simgs/sandeep.jpg', alt: 'Season 1 TEDxSIU speaker' },
-  { src: '/season1/img/profileimgs/riya-sit.jpg', alt: 'Season 1 organising team member' },
-  { src: '/season1/img/simgs/harsha-d.jpg', alt: 'Season 1 TEDxSIU speaker' },
+  { src: sitePath('season1/img/simgs/anjan.jpg'), alt: 'Season 1 TEDxSIU speaker' },
+  { src: sitePath('season1/img/sliderimgs/insideaudi.jpeg'), alt: 'Season 1 auditorium' },
+  { src: sitePath('season1/img/profileimgs/adwita.jpg'), alt: 'Season 1 organising team member' },
+  { src: sitePath('season1/img/simgs/emmanual.jpeg'), alt: 'Season 1 TEDxSIU speaker' },
+  { src: sitePath('season1/img/sliderimgs/maingate.jpeg'), alt: 'Symbiosis campus entrance' },
+  { src: sitePath('season1/img/simgs/sandeep.jpg'), alt: 'Season 1 TEDxSIU speaker' },
+  { src: sitePath('season1/img/profileimgs/riya-sit.jpg'), alt: 'Season 1 organising team member' },
+  { src: sitePath('season1/img/simgs/harsha-d.jpg'), alt: 'Season 1 TEDxSIU speaker' },
 ];
 
 export const LegacyBanner = () => {
@@ -37,7 +38,7 @@ export const LegacyBanner = () => {
             The inaugural TEDxSIU Hyderabad gathering established the red circle that Season 2 now carries forward.
           </p>
         </div>
-        <a href="/season1/index.html" target="_blank" rel="noopener noreferrer" className="btn-primary cursor-target">
+        <a href={sitePath('season1/index.html')} target="_blank" rel="noopener noreferrer" className="btn-primary cursor-target">
           <Film size={16} />
           Launch Season 1 Archive
           <ArrowUpRight size={16} />

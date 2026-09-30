@@ -15,6 +15,7 @@ import { LegacyBanner } from './components/LegacyBanner';
 import { Venue } from './components/Venue';
 import { Footer } from './components/Footer';
 import { MacDock } from './components/MacDock';
+import { currentRoute, sitePath } from './sitePath';
 
 // These two sections pull in the heaviest interactive dependencies (Motion and
 // the animated wall). Keep them out of the critical path until they are needed.
@@ -67,7 +68,7 @@ const DeferredGallery = () => {
 
 export function App() {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
-  const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+  const pathname = currentRoute();
   const activePage = pathname === '/speakers' ? 'speakers' : pathname === '/team' ? 'team' : 'home';
 
   useEffect(() => {
@@ -205,7 +206,7 @@ const PageIntro = ({ title, copy }: { title: ReactNode; copy: string }) => (
     <div className="container directory-intro__content">
       <h1>{title}</h1>
       <p>{copy}</p>
-      <a href="/" className="btn-outline directory-intro__back">Return to the Meraki home</a>
+      <a href={sitePath()} className="btn-outline directory-intro__back">Return to the Meraki home</a>
     </div>
   </section>
 );

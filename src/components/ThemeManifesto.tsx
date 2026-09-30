@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Sparkles, Heart, Flame } from 'lucide-react';
+import { sitePath } from '../sitePath';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -279,7 +280,7 @@ export const ThemeManifesto: React.FC = () => {
                 }}
               >
                 <img
-                  src="/theme/halo_renaissance.png"
+                  src={sitePath('theme/halo_renaissance.png')}
                   alt="Sacred Devotion - Halo Artwork"
                   loading="lazy"
                   decoding="async"
@@ -312,7 +313,7 @@ export const ThemeManifesto: React.FC = () => {
                 }}
               >
                 <img
-                  src="/theme/renaissance_creation.jpg"
+                  src={sitePath('theme/renaissance_creation.jpg')}
                   alt="Meraki Classical Renaissance Art"
                   loading="lazy"
                   decoding="async"
