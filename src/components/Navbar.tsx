@@ -39,6 +39,16 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
     opacity: 0.62,
     userSelect: 'none',
   };
+  const navLinkStyle: React.CSSProperties = {
+    color: activePage === 'speakers' ? 'var(--text-main)' : 'var(--text-muted)',
+    fontFamily: 'var(--font-mono)',
+    fontSize: '11px',
+    fontWeight: 700,
+    letterSpacing: '0.08em',
+    textDecoration: 'none',
+    textTransform: 'uppercase',
+    transition: 'color 0.2s ease',
+  };
 
   return (
     <header
@@ -77,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
               (e.target as HTMLElement).style.display = 'none';
             }}
           />
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div className="navbar-brand-copy" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span className="meraki-title" style={{ fontSize: '15px', color: 'var(--text-main)', letterSpacing: '0.22em' }}>
               meraki
             </span>
@@ -103,12 +113,19 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
 
           <nav className="navbar-page-links" aria-label="Season 2 pages">
-            <span aria-disabled="true" title="Speakers coming soon" style={disabledNavLinkStyle}>Speakers</span>
+            <a
+              href={sitePath('?page=speakers')}
+              aria-current={activePage === 'speakers' ? 'page' : undefined}
+              style={navLinkStyle}
+            >
+              Speakers
+            </a>
             <span aria-disabled="true" title="Team page coming soon" style={disabledNavLinkStyle}>Team</span>
           </nav>
           
           {/* Season Switcher Pill */}
           <div
+            className="navbar-season-switcher"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -154,12 +171,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
               }}
             >
               <Sparkles size={11} />
-              Season 2
+              <span className="season2-txt">Season 2</span>
             </span>
           </div>
 
           {/* Claim Pass Button */}
           <button
+            className="navbar-claim-pass"
             type="button"
             disabled
             aria-disabled="true"
@@ -190,6 +208,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
       <style>{`
         @media (max-width: 600px) {
           .season-txt { display: none; }
+          .navbar-brand-copy,
+          .navbar-claim-pass { display: none !important; }
+          .navbar-season-switcher a,
+          .navbar-season-switcher > span { padding: 6px 10px !important; }
+          .season2-txt { font-size: 0; }
+          .season2-txt::after { content: 'S2'; font-size: 12px; }
         }
         .navbar-page-links {
           display: flex;

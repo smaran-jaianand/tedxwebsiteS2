@@ -1044,6 +1044,209 @@ body {
 /* ----------------------------------------------------
    Dedicated speakers and working-team pages
 ------------------------------------------------------- */
+.speakers-page {
+  position: relative;
+  overflow: clip;
+  padding-bottom: 132px;
+  background:
+    radial-gradient(circle at 78% 10%, rgba(235, 0, 40, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(14, 4, 8, 0.62), rgba(6, 6, 8, 0) 38%);
+}
+
+.speakers-page__hero {
+  min-height: min(780px, 92vh);
+  display: flex;
+  align-items: flex-end;
+  padding: 160px 0 92px;
+  border-bottom: 1px solid rgba(226, 193, 124, 0.16);
+}
+
+.speakers-page__hero-inner {
+  position: relative;
+}
+
+.speakers-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: clamp(54px, 8vh, 96px);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.speakers-page__back:hover {
+  color: var(--greek-gold);
+  transform: translateX(-3px);
+}
+
+.speakers-page__kicker {
+  margin-bottom: 18px;
+  color: var(--greek-gold);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.speakers-page__hero h1 {
+  margin: 0;
+  color: var(--text-main);
+  font-family: var(--font-classical);
+  font-size: clamp(68px, 12vw, 172px);
+  font-weight: 600;
+  line-height: 0.76;
+  letter-spacing: -0.025em;
+}
+
+.speakers-page__hero h1 em {
+  color: var(--ted-red);
+  font-style: normal;
+}
+
+.speakers-page__lede {
+  max-width: 600px;
+  margin: 44px 0 0 auto;
+  color: var(--text-muted);
+  font-family: var(--font-editorial);
+  font-size: clamp(18px, 2vw, 23px);
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.speakers-page__roster {
+  padding-top: 96px;
+}
+
+.speakers-page__roster-heading {
+  display: grid;
+  grid-template-columns: minmax(90px, 0.35fr) minmax(240px, 1fr) minmax(260px, 0.75fr);
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 42px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.speakers-page__roster-heading span {
+  color: var(--ted-red-light);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.speakers-page__roster-heading h2 {
+  margin: 0;
+  color: var(--text-main);
+  font-family: var(--font-classical);
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.speakers-page__roster-heading p {
+  margin: 0;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.speaker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 46px 22px;
+}
+
+.speaker-card {
+  min-width: 0;
+  opacity: 0;
+  animation: speaker-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(80ms * var(--speaker-index));
+}
+
+.speaker-card__portrait {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #0b0b0e;
+  border-top: 1px solid rgba(226, 193, 124, 0.35);
+}
+
+.speaker-card__portrait::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 58%, rgba(6, 6, 8, 0.38));
+}
+
+.speaker-card__portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.74) contrast(1.04) brightness(0.9);
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
+}
+
+.speaker-card:hover .speaker-card__portrait img {
+  transform: scale(1.035);
+  filter: saturate(1) contrast(1.02) brightness(0.98);
+}
+
+.speaker-card__number {
+  position: absolute;
+  z-index: 1;
+  top: 18px;
+  left: 18px;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.speaker-card__copy {
+  min-height: 96px;
+  padding: 19px 0 0;
+}
+
+.speaker-card__copy h3 {
+  margin: 0;
+  color: var(--text-main);
+  font-family: var(--font-classical);
+  font-size: clamp(24px, 2.2vw, 34px);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.speaker-card__copy p {
+  margin: 9px 0 0;
+  color: var(--greek-gold);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.55;
+  text-transform: uppercase;
+}
+
+@keyframes speaker-reveal {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .directory-intro,
 .team-page__hero {
   min-height: 440px;
@@ -1248,10 +1451,29 @@ body {
 }
 
 @media (max-width: 900px) {
+  .speaker-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .speakers-page__roster-heading { grid-template-columns: 90px 1fr; }
+  .speakers-page__roster-heading p { grid-column: 2; text-align: left; }
   .team-circle__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (max-width: 650px) {
+  .speakers-page { padding-bottom: 82px; }
+  .speakers-page__hero {
+    min-height: 680px;
+    padding-top: 128px;
+    padding-bottom: 64px;
+  }
+  .speakers-page__back { margin-bottom: 70px; }
+  .speakers-page__hero h1 { font-size: clamp(58px, 20vw, 92px); line-height: 0.82; }
+  .speakers-page__lede { margin-top: 34px; }
+  .speakers-page__roster { padding-top: 64px; }
+  .speakers-page__roster-heading { grid-template-columns: 1fr; gap: 10px; margin-bottom: 28px; }
+  .speakers-page__roster-heading p { grid-column: 1; }
+  .speaker-grid { grid-template-columns: 1fr; gap: 36px; }
+  .speaker-card__portrait { aspect-ratio: 4 / 5; }
+  .speaker-card__copy { min-height: 0; }
+
   .directory-intro,
   .team-page__hero {
     min-height: 360px;
@@ -1566,6 +1788,12 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .speaker-card {
+    opacity: 1;
+    animation: none;
+  }
+  .speaker-card__portrait img { transition: none; }
+
   .sacred-halo {
     animation: none;
   }

@@ -13,6 +13,8 @@ import { LegacyBanner } from './components/LegacyBanner';
 import { Venue } from './components/Venue';
 import { Footer } from './components/Footer';
 import { MacDock } from './components/MacDock';
+import { Speakers } from './components/Speakers';
+import { currentRoute } from './sitePath';
 
 // These two sections pull in the heaviest interactive dependencies (Motion and
 // the animated wall). Keep them out of the critical path until they are needed.
@@ -60,6 +62,9 @@ const DeferredGallery = () => {
 };
 
 export function App() {
+  const route = currentRoute();
+  const isSpeakersPage = route === '/speakers';
+
   useEffect(() => {
     // Register GSAP plugins
     gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
@@ -131,10 +136,14 @@ export function App() {
       />
 
       {/* Minimal Top Header */}
-      <Navbar activePage="home" />
+      <Navbar activePage={isSpeakersPage ? 'speakers' : 'home'} />
 
       {/* Page Sections */}
       <main style={{ position: 'relative', zIndex: 1 }}>
+        {isSpeakersPage ? (
+          <Speakers />
+        ) : (
+          <>
         {/* Minimal Hero */}
         <Hero />
 
@@ -158,6 +167,8 @@ export function App() {
 
         {/* Campus Venue */}
         <Venue />
+          </>
+        )}
       </main>
 
       {/* Themed macOS Dock at bottom */}

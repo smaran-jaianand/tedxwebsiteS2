@@ -51,10 +51,10 @@ export const MacDock: React.FC = () => {
     },
     {
       id: 'speakers',
-      title: 'Speakers · Coming soon',
+      title: 'Season 2 Speakers',
       icon: Users,
-      disabled: true,
-      accentColor: '#4b5563',
+      href: sitePath('?page=speakers'),
+      accentColor: 'var(--ted-red)',
     },
     {
       id: 'team',
