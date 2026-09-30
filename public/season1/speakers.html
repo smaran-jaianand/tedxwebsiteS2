@@ -1,0 +1,918 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta content="tedxsiuh, tedx, tedx talks, hyderabad, talks, speakers" name="keywords">
+	<meta content="TEDx is an international community that organizes TED-style events anywhere and everywhere"
+		name="description">
+	<!-- <link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700"
+		rel="stylesheet"> -->
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="lib/animate/animate.min.css" rel="stylesheet">
+	<link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+	<link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="speaker.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+	<title>Speakers</title>
+	<style>
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			opacity: 0;
+			animation: fadeInBody 2s ease-in-out forwards;
+			display: none;
+		}
+
+		@keyframes fadeInBody {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		#header {
+			background-color: black;
+			padding: 0;
+			/* Remove extra padding */
+			margin: 0;
+			/* Remove extra margin */
+			height: 100px;
+			/* Set a smaller height */
+			display: flex;
+			align-items: center;
+			/* Vertically center content */
+		}
+
+		th,
+		td {
+			text-align: left;
+			padding: 8px;
+			color: white;
+		}
+
+		#logo img {
+			height: 70px;
+			/* Reduce logo height  */
+			width: 200px;
+			/* Keep aspect ratio */
+			margin: 0;
+			padding: 0;
+		}
+
+		.card-text {
+			color: white;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		/* 
+		.card-img-top {
+			height: 400px;
+			font-weight: 500px;
+		} */
+
+		.card {
+			background-color: #000000;
+			/* border: 2px solid #EB0028; */
+			border-radius: 8px;
+			padding: 1rem;
+			transition: transform 0.7s, box-shadow 0.6s;
+			opacity: 0;
+			transform: translateY(30px);
+			animation: fadeInCard 1s ease-in-out forwards;
+			animation-delay: var(--delay, 0s);
+		}
+
+		@keyframes fadeInCard {
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.card:hover {
+			/* on hover enlarge , shadow */
+			transform: scale(1.02);
+			box-shadow: 0 0 40px 3px rgba(207, 35, 35, 1.2);
+		}
+
+		/* .card:hover {
+	transform: scale(1.01);
+	} */
+
+		.card-title {
+			text-transform: uppercase;
+			font-weight: bold;
+			color: red;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.card-text {
+			font-weight: 600;
+			text-transform: capitalize;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.social a .tw {
+			background-color: #0084b4;
+		}
+
+		.social a .fb {
+			background-color: #3b5998;
+		}
+
+		.social a .ig {
+			background-color: #cd486b;
+		}
+
+		.social a .tw:hover {
+			transform: scale(1.15);
+		}
+
+		.social a .fb:hover {
+			transform: scale(1.15);
+		}
+
+		.social a .ig:hover {
+			transform: scale(1.15);
+		}
+
+		.social div {
+			width: 40px;
+			height: 40px;
+			background: green;
+			margin: 0 5px;
+			border-radius: 50%;
+			cursor: pointer;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #fff;
+		}
+
+		.social {
+			width: 50%;
+			height: 50px;
+			position: absolute;
+			z-index: 15;
+			bottom: 0%;
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		.navbar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 9999;
+			width: 100%;
+			height: 60px;
+			background-color: black;
+			opacity: 0.85;
+		}
+
+		.navbar a {
+			float: left;
+			display: block;
+			color: #f2f2f2;
+			text-align: center;
+			padding: 1px 16px;
+			text-decoration: none;
+		}
+
+		.main {
+			padding: 13px;
+			margin-top: 50px;
+			height: 1500px;
+			/* Used in this example to enable scrolling */
+		}
+
+		.null {
+			display: none;
+			visibility: hidden;
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
+	<header id="header">
+		<div class="container">
+			<div id="logo" class="pull-left">
+				<h1><a href="#body"><img src="img/tedxsiuhyd.jpg" height="90px" width="200px"></a>
+				</h1>
+			</div>
+			<nav style="float: right;" id="nav-menu-container">
+				<ul class="nav-menu">
+					<li class="menu-active"><a href="index.html#body">HOME</a></li>
+					<li><a href="index.html">ABOUT</a></li>
+					<li><a href="index.html#portfolio">MEDIA</a></li>
+					<li><a href="index.html#clients">PARTNERS</a></li>
+					<li><a href="index.html#contact">VENUE</a></li>
+					<li>
+					<li><a href="team.html">TEAM</a></li>
+
+					</li>
+					<li>
+					<li><a href="https://forms.gle/MeHNR8V3eLM3C7kz9">SPEAKERS</a></li>
+
+					</li>
+					<li>
+					<li><a href="#">TICKETS</a></li>
+
+					</li>
+					<li style="color:grey; padding-top:10px">|</li>
+					<li class="social-links">
+					<li>
+						<a href="https://www.instagram.com/tedxsiuhyderabad?igsh=MW94cW5yeHk5b3RsaQ=="
+							class="instagram"><i class="fa fa-instagram"></i></a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/company/tedx-siu-hyderabad/" class="linkedln"><i
+								class="fa fa-linkedin"></i></a>
+					</li>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+
+	<div class="main">
+		<div class="container my-5">
+			<!-- Speaker Card -->
+			<div class="card speaker-card p-4 mb-5 d-flex flex-lg-row flex-column align-items-center gap-4">
+				<!-- Info Block -->
+				<div class="speaker-info flex-grow-1 text-center text-lg-start">
+					<h3 class="text-white fw-semibold mb-1">Dr. Vidya Yeravdekar</h3>
+					<p class="text-muted mb-3">Pro Chancellor | Symbiosis International ( Deemed University ) </p>
+					<p class="text-light text-justify">
+						Dr. Vidya Yeravdekar is the Pro Chancellor of Symbiosis International (Deemed University), a
+						premier multi-disciplinary university with over 45,000 students from across India and 85
+						countries. She holds postgraduate degrees in Medicine and Law, along with a Ph.D. in the
+						Internationalisation of Higher Education in India.
+						A key contributor to India's National Education Policy 2020, Dr. Yeravdekar has served two terms
+						on the University Grants Commission (UGC) and held roles in national bodies like CABE, ICCR,
+						SEPC, and IBEF. As Chairperson of FICCI's Higher Education Committee, she continues to shape
+						education policy and promote 'Brand India' globally.She also serves on the boards of several
+						academic, industry, and nonprofit organisations, and remains committed to driving innovation and
+						global engagement at Symbiosis.
+
+
+					</p>
+					<a href="#" class="btn-star">
+						<span class="top_left"></span>
+						<span class="top_right"></span>
+						<span class="title">
+							Linkedin
+						</span>
+						<span class="bottom_left"></span>
+						<span class="bottom_right"></span>
+					</a>
+
+				</div>
+
+				<!-- Image Block -->
+				<div class="speaker-img"><img src="img/simgs/vidya.png" alt="Dr.Vidya Yeravdekar">
+				</div>
+			</div>
+			<!-- Speaker Card -->
+			<div class="card speaker-card p-4 mb-5 d-flex flex-lg-row flex-column align-items-center gap-4">
+				<!-- Info Block -->
+				<div class="speaker-info flex-grow-1 text-center text-lg-start">
+					<h3 class="text-white fw-semibold mb-1">Dr.Ramakrishnan Raman</h3>
+					<p class="text-muted mb-3">Vice Chancellor | Symbiosis International ( Deemed University )</p>
+					<p class="text-light text-justify">
+						Dr. Ramakrishnan Raman is an academic leader with over two decades of experience spanning
+						academia, research, and industry. With a Ph.D. in Management, an MBA, and a background in
+						Computer Science, he has held key roles at Symbiosis, including Director of SCIT and SIBM Pune,
+						and Dean of the Faculty of Management.
+						As Vice Chancellor, he drives academic excellence and global collaboration, with research
+						interests in IT Strategy, AI, Big Data, and Entrepreneurship.
+
+					</p>
+					<a href="#" class="btn-star">
+						<span class="top_left"></span>
+						<span class="top_right"></span>
+						<span class="title">
+							Linkedin
+						</span>
+						<span class="bottom_left"></span>
+						<span class="bottom_right"></span>
+					</a>
+
+				</div>
+
+				<!-- Image Block -->
+				<div class="speaker-img"><img src="img/simgs/raman.JPG" alt="Dr.Ramakrishnan Raman">
+				</div>
+			</div>
+			<!-- Speaker Card -->
+			<div class="card speaker-card p-4 mb-5 d-flex flex-lg-row flex-column align-items-center gap-4">
+				<!-- Info Block -->
+				<div class="speaker-info flex-grow-1 text-center text-lg-start">
+					<h3 class="text-white fw-semibold mb-1">Sandeep Chatterjee</h3>
+					<p class="text-muted mb-3">Supply Chain & Sustainability | IBM Consulting
+					</p>
+					<p class="text-light text-justify">
+						Sandeep is a Supply Chain and Sustainability Leader with IBM Consulting with responsibility for
+						engagements in supply chain, sustainability leveraging technology. Prior to IBM Consulting, he
+						has worked with Deloitte, KPMG, Tata Motors, Lafarge, Infosys and Oracle Consulting and his key
+						strengths lie in the areas of supply chain management, business process reengineering, emerging
+						countries enablement, network optimization, sustainability, ERP advisory across multiple
+						industries and geographies.
+
+						He holds an MBA from Indian Institute of Management, Kozhikode and a Bachelor of Engineering
+						(Mechanical), Bengal Engineering and Science University, Shibpur (formerly Bengal Engineering
+						College).
+
+						Among his various accolades and awards, recently Sandeep became the recipient of the coveted
+						'Global Power Leader 2024', 'Global 200 Inspirational Leaders 2023' and 'Economic Times
+						Inspiring Leader Award', 2022 . He has been conferred upon the "Supply Chain Evangelist", "MTC
+						Global Awards for Excellence, 2017 as an outstanding Corporate Award: Consulting"; "50 Under 50
+						Professionals" by HR Association of India and "40 Under 40 Supply Chain Professionals" Awards
+						and is among the top 100 Supply Chain Professionals in the country.
+					</p>
+					<a href="https://www.linkedin.com/in/sandeep-chatterjee-4302271" class="btn-star">
+						<span class="top_left"></span>
+						<span class="top_right"></span>
+						<span class="title">
+							Linkedin
+						</span>
+						<span class="bottom_left"></span>
+						<span class="bottom_right"></span>
+					</a>
+
+				</div>
+
+				<!-- Image Block -->
+				<div class="speaker-img"><img src="img/simgs/sandeep.jpg" alt="Sandeep Chatterjee">
+				</div>
+			</div>
+			<!-- Speaker Card -->
+			<div class="card speaker-card p-4 mb-5 d-flex flex-lg-row flex-column align-items-center gap-4">
+				<!-- Info Block -->
+				<div class="speaker-info flex-grow-1 text-center text-lg-start">
+					<h3 class="text-white fw-semibold mb-1">Harsha Durugadda</h3>
+					<p class="text-muted mb-3">Sculptor</p>
+					<p class="text-light text-justify">
+						Harsha Durugadda is an Indian sculptor who received The Arts Family Emerging Artist Award in
+						2023 for South Asia and won the Rio Tinto Sculpture Award 2017 at Sculpture by the Sea,
+						Australia. In 2021 he was part of a Sotheby’s New York contemporary auction in partnership with
+						Burning Man. In 2014, the Courtauld Institute of Art invited him to present on Ancient Buddhist
+						Sculpture at the British Museum, London. He received the Andrew Stretton Memorial invitation in
+						2016 Sydney. His sculptures have been exhibited internationally at Nord Art in Germany, Emergent
+						Art Space in the United States, London, and Sculpture by the Sea in Australia. Durugadda’s
+						artworks are part of major public and private collections including Busselton Jetty (Australia),
+						Bangalore Airport and RMZ Foundation.
+					</p>
+					<a href="https://www.linkedin.com/in/harsha-durugadda-0015422" class="btn-star">
+						<span class="top_left"></span>
+						<span class="top_right"></span>
+						<span class="title">
+							Linkedin
+						</span>
+						<span class="bottom_left"></span>
+						<span class="bottom_right"></span>
+					</a>
+
+				</div>
+
+				<!-- Image Block -->
+				<div class="speaker-img"><img src="img/simgs/harsha-d.jpg" alt="Harsha Durugadda">
+				</div>
+			</div>
+			<!-- Speaker Card -->
+			<div class="card speaker-card p-4 mb-5 d-flex flex-lg-row flex-column align-items-center gap-4">
+				<!-- Info Block -->
+				<div class="speaker-info flex-grow-1 text-center text-lg-start">
+					<h3 class="text-white fw-semibold mb-1">Saurabh Sharma</h3>
+					<p class="text-muted mb-3">Managing Director | JSSB Legal</p>
+					<p class="text-light text-justify">
+						Mr. Saurabh Sharma is an Advocate with a stellar experience of two decades. Having learnt his
+						craft from the stalwarts of the litigation field, Mr. Sharma is the torch-bearer who helms JSSB
+						Legal. He frequently strolls across various courts across India and has membership of Supreme
+						Court Bar Association, The Bar Association of India, Delhi Bar Association, Saket Bar
+						Association, Gurgaon Bar Association and Nainital High Court Bar Association. His law firm has
+						been awarded The Bharat Nyay Puraskar by the Ministry of Social Justice and Empowerment and it
+						is just one of the many awards and accolades won by the Law Firm. He is often seen across
+						various Podcasts educating us on various legal issues.
+					</p>
+					<a href="https://www.linkedin.com/in/sandeep-chatterjee-4302271" class="btn-star">
+						<span class="top_left"></span>
+						<span class="top_right"></span>
+						<span class="title">
+							Linkedin
+						</span>
+						<span class="bottom_left"></span>
+						<span class="bottom_right"></span>
+					</a>
+
+				</div>
+
+				<!-- Image Block -->
+				<div class="speaker-img"><img src="img/simgs/saurabh.jpeg" alt="Saurabh Sharma">
+				</div>
+			</div>
+			<div class="card speaker-card p-4 mb-5 d-flex flex-lg-row flex-column align-items-center gap-4">
+				<!-- Info Block -->
+				<div class="speaker-info flex-grow-1 text-center text-lg-start">
+					<h3 class="text-white fw-semibold mb-1">Emmanuel Gosula</h3>
+					<p class="text-muted mb-3">Senior Manager - People Partner | EPAM Systems</p>
+					<p class="text-light text-justify">
+						Emmanuel Gosula is a Senior Manager, People Partner at EPAM Systems, based in Hyderabad. With
+						nearly 20 years of experience across HR business partnering, talent development, L&D, coaching,
+						and HR analytics, he is known for his emotionally intelligent leadership . An XLRI alumni,
+						Emmanuel has shaped programs like EPAM’s Campus Education Programs for Students and Teaching
+						Professors, and scholarship programs for underrepresented women & children in tech. He was a
+						board member of professional bodies like NHRDN & ISTD, and core HR committee member of CII,
+						Hysea and ISF in the past. He frequently speaks at forums like HR Shappers, SymbiTalks and ISTD,
+						sharing insights on adversity, AI-driven preparedness, and leadership. Passionate about
+						nurturing talent, he transforms his own journey of support into a mission to empower others.
+					</p>
+					<a href="https://www.linkedin.com/in/emmanuelgosula" class="btn-star">
+						<span class="top_left"></span>
+						<span class="top_right"></span>
+						<span class="title">
+							Linkedin
+						</span>
+						<span class="bottom_left"></span>
+						<span class="bottom_right"></span>
+					</a>
+
+				</div>
+
+				<!-- Image Block -->
+				<div class="speaker-img"><img src="img/simgs/emmanual.jpeg" alt="Emmanuel Gosula">
+				</div>
+			</div>
+			<div class="card speaker-card p-4 mb-5 d-flex flex-lg-row flex-column align-items-center gap-4">
+				<!-- Info Block -->
+				<div class="speaker-info flex-grow-1 text-center text-lg-start">
+					<h3 class="text-white fw-semibold mb-1">Mr. Kumar Rajagopalan</h3>
+					<p class="text-muted mb-3">Vice President & Country Head | Dexian India</p>
+					<p class="text-light text-justify">
+						Kumar Rajagopalan, Vice President of Strategic Initiatives and Country Head at Dexian, is a
+						transformative leader with over 30 years of industry experience. He has steered Dexian into a
+						global
+						growth powerhouse, redefining the role of Global Capability Centers (GCCs) across international
+						markets through visionary strategy and pragmatic execution. A Chartered Accountant by training,
+						Kumar transitioned seamlessly into technology leadership, streamlining enterprise solutions and
+						ERP
+						systems, driving mergers, and enhancing Dexian’s financial modeling. His commitment to Corporate
+						Social Responsibility, especially in partnership with the Head Held High Foundation, reflects
+						his
+						human-centric approach, fostering inclusive growth, social impact, and a workplace culture
+						rooted in
+						purpose and well-being.
+					</p>
+					<a href="https://www.linkedin.com/in/kumar-rajagopalan-dexian" class="btn-star">
+						<span class="top_left"></span>
+						<span class="top_right"></span>
+						<span class="title">
+							Linkedin
+						</span>
+						<span class="bottom_left"></span>
+						<span class="bottom_right"></span>
+					</a>
+
+				</div>
+
+				<!-- Image Block -->
+				<div class="speaker-img"><img src="img/simgs/kumar.jpg" alt="Mr. Kumar Rajagopalan">
+				</div>
+			</div>
+			<div class="card speaker-card p-4 mb-5 d-flex flex-lg-row flex-column align-items-center gap-4">
+				<!-- Info Block -->
+				<div class="speaker-info flex-grow-1 text-center text-lg-start">
+					<h3 class="text-white fw-semibold mb-1">Mr. Anjaneyulu Pillalamarri</h3>
+					<p class="text-muted mb-3">CEO | Giosun Healthcare</p>
+					<p class="text-light text-justify">
+
+						Anjaneyulu Pillalamarri, known as Anjan, is a visionary entrepreneur and the Co-founder and CEO
+						of Giosun Healthcare, a company dedicated to modernizing Ayurvedic wellness. With over 27 years
+						of leadership experience in the pharmaceutical sector, he seamlessly transitioned to championing
+						plant-based health solutions, blending ancient wisdom with advanced scientific research. Under
+						his guidance, Giosun has grown into a symbol of excellence in holistic wellness, with a focus on
+						sustainability and ethical sourcing. Anjan is also known for his commitment to community
+						service, reflecting his belief in creating positive change beyond business.
+					</p>
+					<a href="https://www.linkedin.com/in/anjan-businessgrowt" class="btn-star">
+						<span class="top_left"></span>
+						<span class="top_right"></span>
+						<span class="title">
+							Linkedin
+						</span>
+						<span class="bottom_left"></span>
+						<span class="bottom_right"></span>
+					</a>
+
+				</div>
+
+				<!-- Image Block -->
+				<div class="speaker-img"><img src="img/simgs/anjan.jpg" alt="Anjaneyulu Pillalamarri">
+				</div>
+			</div>
+			<div class="card speaker-card p-4 mb-5 d-flex flex-lg-row flex-column align-items-center gap-4">
+				<!-- Info Block -->
+				<div class="speaker-info flex-grow-1 text-center text-lg-start">
+					<h3 class="text-white fw-semibold mb-1">Ms. Galla Madhavi</h3>
+					<p class="text-muted mb-3">Director | Vikaas Hospitals</p>
+					<p class="text-light text-justify">
+						Galla Madhavi hails from Mulukuduru village in Ponnur and comes from a family dedicated to
+						service. After moving to Guntur in 2013, she pursued her passion for social upliftment through
+						teaching and philanthropy.Her aspiration towards the society lead her to purse civil services
+						till the preliminary stage and turned her passion for nobel profession teaching.Currently, she
+						is the Director of Vikaas Hospitals, focusing on affordable healthcare and community welfare.
+						She co-founded the Sri Bhramara Trust to promote education, healthcare, and environmental
+						sustainability. Madhavi actively engages in social initiatives like health camps and livelihood
+						programs, driven by a strong commitment to community development striving to bring positive
+						change and empower underserved populations. This commitment towards society lead her into
+						politics in 2024 and now she is also serving to the society as an MLA.
+					</p>
+					<!-- <a href="https://www.linkedin.com/in/" class="btn-star">
+						<span class="top_left"></span>
+						<span class="top_right"></span>
+						<span class="title">
+							Linkedin
+						</span>
+						<span class="bottom_left"></span>
+						<span class="bottom_right"></span>
+					</a> -->
+
+				</div>
+
+				<!-- Image Block -->
+				<div class="speaker-img"><img src="img/simgs/Madhavi.jpg" alt="Ms. Galla Madhavi">
+				</div>
+			</div>
+			<div class="card speaker-card p-4 mb-5 d-flex flex-lg-row flex-column align-items-center gap-4">
+				<!-- Info Block -->
+				<div class="speaker-info flex-grow-1 text-center text-lg-start">
+					<h3 class="text-white fw-semibold mb-1">Dr. Sudeendra Koushik</h3>
+					<p class="text-muted mb-3">Chief Innovator & Founder | Innovation by Design</p>
+					<p class="text-light text-justify">
+						A highly experienced professional in technology management, innovation, and consulting, with
+						nearly 50 patents at various stages. Consults and advises organizations to enhance innovation
+						capacity, foster innovators, and cultivate an innovation-driven culture. Has worked
+						internationally with Philips in Singapore, the Philips Innovation Campus in the Netherlands and
+						India, and Volvo, among others. Has many awards like India Design Mark, IEEE MGA Innovation,
+						Volvo Innovation and more. Serves as a visiting faculty member at numerous national and
+						international universities, such as
+						NID, Reva, IIT, and the University of Arkansas, and more. Currently the President Elect of the
+						IEEE Technology and Engineering Management Society. An engaging TEDx speaker and
+						international keynote presenter, also recognized as a cartoonist and TV &amp; cinema actor.
+					</p>
+					<a href="https://www.linkedin.com/in/sudeendrakoushik/?originalSubdomain=in" class="btn-star">
+						<span class="top_left"></span>
+						<span class="top_right"></span>
+						<span class="title">
+							Linkedin
+						</span>
+						<span class="bottom_left"></span>
+						<span class="bottom_right"></span>
+					</a>
+
+				</div>
+
+				<!-- Image Block -->
+				<div class="speaker-img"><img src="img/simgs/SK.jpeg" alt="Dr. Sudeendra Koushik">
+				</div>
+			</div>
+			<div class="card speaker-card p-4 mb-5 d-flex flex-lg-row flex-column align-items-center gap-4">
+				<!-- Info Block -->
+				<div class="speaker-info flex-grow-1 text-center text-lg-start">
+					<h3 class="text-white fw-semibold mb-1">Mr. Ansuman Pattanayak</h3>
+					<p class="text-muted mb-3">Founder and CEO | QED Classes</p>
+					<p class="text-light text-justify">
+						Ansuman Pattnayak is a renowned educator, and passionate mentor at QED Classes, where he trains
+						Class 11, 12, NEET, and IIT-JEE aspirants to excel in some of India’s toughest exams. With his
+						unique teaching style, he has guided countless students into IITs, AIIMS, and other top
+						institutions across the country. An alumnus of IIT Roorkee (CEH), Ansuman blends academic
+						brilliance with real-world vision. He is also the Founder & Chairman of Almonzo Group, a dynamic
+						conglomerate with ventures in Technology, Gaming, Entertainment, Real Estate, Construction, and
+						Sports. Driven by innovation, leadership, and a mission to empower youth, he continues to shape
+						both future students and future industries.
+					</p>
+					<a href="https://www.linkedin.com/in/ansuman-pattanayak-b6a30b203?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+						class="btn-star">
+						<span class="top_left"></span>
+						<span class="top_right"></span>
+						<span class="title">
+							Linkedin
+						</span>
+						<span class="bottom_left"></span>
+						<span class="bottom_right"></span>
+					</a>
+
+				</div>
+
+				<!-- Image Block -->
+				<div class="speaker-img"><img src="img/simgs/ansuman.jpg" alt="">
+				</div>
+			</div>
+		</div>
+
+		<style>
+			body {
+				background-color: #0f0f0f;
+				font-family: 'Poppins', sans-serif;
+			}
+
+			.speaker-card {
+				background: rgba(255, 255, 255, 0.05);
+				backdrop-filter: blur(12px);
+				border: 1px solid rgba(255, 255, 255, 0.08);
+				border-radius: 20px;
+				transition: all 0.3s ease-in-out;
+			}
+
+			.speaker-card:hover {
+				transform: translateY(-6px);
+				box-shadow: 0 12px 30px rgba(230, 43, 30, 0.315);
+			}
+
+			.speaker-img {
+				width: 240px;
+				height: 240px;
+				border: 3px solid #ff110059;
+				border-radius: 16px;
+				overflow: hidden;
+				display: block;
+				flex-shrink: 0;
+				margin-left: 2rem;
+				padding: 0;
+				box-sizing: border-box;
+				position: relative;
+				/* Optional: helps eliminate margin collapse bugs */
+			}
+
+			.speaker-img img {
+				width: 120%;
+				height: 100%;
+			}
+		</style>
+
+		<br>
+		<br>
+		<footer>
+			<div class="wow fadeInUp">
+				<div class="footer">
+					<div class="footer-left">
+						<img src="img/tedxsiuhyd.jpg" alt="TEDxSIUH Logo">
+					</div>
+					<div class="footer-left">
+						<p class="copyright">@Copyright 2025 - TEDxSIU Hyderabad</p>
+					</div>
+					<div class="footer-right">
+						<a href="#"><i class="fa fa-instagram"></i></a>
+						<a href="#"><i class="fa fa-linkedin"></i></a>
+					</div>
+
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		.footer {
+			max-width: 1400px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px 40px;
+			background-color: black;
+			color: white;
+		}
+
+		.footer-left img {
+			height: 90px;
+			width: auto;
+		}
+
+		.footer-right a {
+			color: white;
+			background-color: #000000;
+			margin-left: 10px;
+			padding: 8px;
+			border-radius: 6px;
+			display: inline-block;
+			text-align: center;
+			transition: background-color 0.3s ease;
+		}
+
+		.footer-right a:hover {
+			background-color: rgba(220, 39, 39, 0.9);
+		}
+
+		.copyright {
+			font-size: 20px;
+			margin-top: 6px;
+			color: #999;
+		}
+	</style>
+	</div>
+	<script>document.body.style.display = "block";</script>
+	<style>
+		/* THIS IS THE LINKED IN BUTTON STYLE */
+		@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:100,400');
+
+		/* Hover Effect Animations */
+		@keyframes StarBackground {
+			10% {
+				background-color: rgba(255, 255, 255, 0.1);
+				filter: blur(1px);
+			}
+
+			20% {
+				background-color: rgba(255, 255, 255, 0);
+			}
+
+			40% {
+				background-color: rgba(255, 255, 255, 0.05);
+			}
+
+			50% {
+				background-color: rgba(255, 255, 255, 0);
+			}
+
+			60% {
+				background-color: rgba(255, 255, 255, 0.3);
+			}
+
+			70% {
+				background-color: rgba(255, 255, 255, 0);
+				filter: blur(2px);
+			}
+
+			80% {
+				background-color: rgba(255, 255, 255, 0.2);
+			}
+
+			90% {
+				background-color: rgba(255, 255, 255, 0.1);
+			}
+
+			100% {
+				background-color: rgba(255, 255, 255, 0.09);
+			}
+		}
+
+		@keyframes StarBorderColor {
+			10% {
+				border-color: rgba(255, 255, 255, 0.1);
+			}
+
+			20% {
+				border-color: rgba(255, 255, 255, 0.05);
+			}
+
+			40% {
+				border-color: rgba(255, 255, 255, 0);
+			}
+
+			50% {
+				border-color: rgba(255, 255, 255, 0.3);
+			}
+
+			60% {
+				border-color: rgba(255, 255, 255, 0);
+			}
+
+			70% {
+				border-color: rgba(255, 255, 255, 0.2);
+			}
+
+			80% {
+				border-color: rgba(255, 255, 255, 0.7);
+			}
+
+			90% {
+				border-color: rgba(255, 255, 255, 0);
+			}
+
+			100% {
+				border-color: rgba(255, 255, 255, 0.4);
+			}
+		}
+
+		/* Button Styling */
+		.btn-star {
+			position: relative;
+			background-color: rgba(255, 255, 255, 0.03);
+			padding: 10px 30px;
+			display: block;
+			max-width: 140px;
+			margin: 0 auto;
+			color: rgba(255, 255, 255, 0.6);
+			font-weight: 100;
+			transition: color 0.5s ease, background-color 0.1s ease;
+		}
+
+		.btn-star .top_left,
+		.btn-star .top_right,
+		.btn-star .bottom_left,
+		.btn-star .bottom_right {
+			width: 10px;
+			height: 10px;
+			position: absolute;
+		}
+
+		.btn-star .bottom_right,
+		.btn-star .bottom_left {
+			bottom: 0;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+		}
+
+		.btn-star .top_left,
+		.btn-star .top_right {
+			top: 0;
+			border-top: 1px solid rgba(255, 255, 255, 0.3);
+		}
+
+		.btn-star .top_left,
+		.btn-star .bottom_left {
+			left: 0;
+			border-left: 1px solid rgba(255, 255, 255, 0.3);
+		}
+
+		.btn-star .top_right,
+		.btn-star .bottom_right {
+			right: 0;
+			border-right: 1px solid rgba(255, 255, 255, 0.3);
+		}
+
+		.btn-star::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			border: 1px solid transparent;
+			top: 0;
+			left: 0;
+			transition: border-color 0.2s ease;
+		}
+
+		.btn-star:hover {
+			animation: StarBackground 0.5s;
+			background-color: rgba(255, 255, 255, 0.09);
+			color: rgba(255, 255, 255, 1);
+		}
+
+		.btn-star:hover .top_left,
+		.btn-star:hover .top_right,
+		.btn-star:hover .bottom_left,
+		.btn-star:hover .bottom_right {
+			border: none;
+		}
+
+		.btn-star:hover::before {
+			border-color: rgba(255, 255, 255, 0.4);
+			animation: StarBorderColor 1s;
+		}
+	</style>
+</body>
+
+</html>

@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta content="tedxsiuh, tedx, tedx talks, hyderabad, talks, speakers" name="keywords">
+	<meta content="TEDx is an international community that organizes TED-style events anywhere and everywhere"
+		name="description">
+	<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700"
+		rel="stylesheet">
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="lib/animate/animate.min.css" rel="stylesheet">
+	<link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+	<link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<title>THE POWEHOUSE</title>
+	<style>
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			display: none;
+			margin: 0;
+			font-family: Arial, sans-serif;
+			background-color: #000000;
+			color: #fff;
+			opacity: 0;
+			animation: fadeInBody 2s ease-in-out forwards;
+		}
+
+		@keyframes fadeInBody {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		#header {
+			background-color: black;
+			padding: 0;
+			/* Remove extra padding */
+			margin: 0;
+			/* Remove extra margin */
+			height: 100px;
+			/* Set a smaller height */
+			display: flex;
+			align-items: center;
+			/* Vertically center content */
+		}
+
+		th,
+		td {
+			text-align: left;
+			padding: 8px;
+			color: white;
+		}
+
+		#logo img {
+			height: 70px;
+			/* Reduce logo height */
+			width: 200px;
+			/* Keep aspect ratio */
+			margin: 0;
+			padding: 0;
+		}
+
+		.headerteam {
+			background-color: #000000;
+			font-family: 'Montserrat', Arial, sans-serif;
+			color: #E62B1E;
+			padding: 0px;
+			text-align: center;
+			font-size: 40px;
+			font-weight: bold;
+			grid-column: 1/-1;
+			text-shadow: 0 0 18px #E62B1E, 0 0 100px #E62B1E;
+		}
+
+		.containerteam {
+			max-width: 1200px;
+			margin: 20px auto;
+			padding: 25px;
+			background-color: #000000;
+			border-radius: 8px;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 1rem;
+		}
+
+		.containerteam img {
+			width: 100%;
+			height: 200px;
+			object-fit: cover;
+			border-radius: 4px;
+			margin-bottom: 10px;
+		}
+
+		.album-item {
+			background-color: #000000;
+			border: 1px solid #c0c0c0;
+			border-radius: 8px;
+			padding: 1rem 1.1rem;
+			text-align: center;
+			transition: transform 0.3s, box-shadow 0.7s;
+			opacity: 0;
+			transform: translateY(30px);
+			animation: fadeInUp 0.8s ease-in-out forwards;
+			animation-delay: var(--delay, 0s);
+			filter: grayscale(100%);
+			transition: filter 0.3s ease-in-out;
+		}
+
+		@keyframes fadeInUp {
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.album-item:hover {
+			/* on hover enlarge , shadow */
+			transform: scale(1.03);
+			box-shadow: 0px 0px 45px 5px rgba(207, 35, 35, 1.2);
+			filter: grayscale(0%);
+		}
+
+		.album-item img {
+			width: 100%;
+			height: 200px;
+			object-fit: cover;
+			border-radius: 4px;
+			margin-bottom: 0.5rem;
+		}
+
+		.album-item-placeholder {
+			color: #c0c0c0;
+			font-style: italic;
+		}
+
+		.logo {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			width: 210px;
+			height: auto;
+		}
+
+		footer {
+			background-color: #EB0028;
+			color: white;
+			text-align: center;
+			padding: 1rem 0;
+			margin-top: 2rem;
+		}
+
+		.containerteam h3 {
+			grid-column: span 4;
+			color: #ffffff;
+			font-size: 1.4rem;
+			margin-bottom: 1rem;
+			text-align: center;
+		}
+
+		#teamheading {
+			color: #ffffff;
+			font-size: 1.8rem;
+			margin-bottom: 1rem;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+
+		#header {
+			background-color: black;
+		}
+
+		.linkedin-button {
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			background-color: transparent;
+			/* Changed to transparent */
+			color: white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-decoration: none;
+			transition: all 0.3s ease;
+			margin: 10px auto;
+			position: relative;
+			overflow: hidden;
+			border: 2px solid transparent;
+			/* Added border for outline effect */
+		}
+
+		.linkedin-button:hover {
+			box-shadow: 0 0 5px 30px rgba(1, 102, 194, 0.6);
+			/* Glow effect */
+			/* Ensure background remains transparent */
+		}
+
+		.linkedin-button:hover {
+			-webkit-box-shadow: 0px 0px 27px 5px rgba(55, 108, 214, 0.83);
+			-moz-box-shadow: 0px 0px 27px 5px rgba(55, 108, 214, 0.83);
+			box-shadow: 0px 0px 27px 5px rgba(55, 108, 214, 0.83);
+		}
+
+		.linkedin-button img {
+			height: 70px;
+			image-resolution: from-image;
+			/* Adjusted width 
+			/* Adjusted height */
+		}
+
+
+
+
+		.navbar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 9999;
+			width: 100%;
+			height: 60px;
+			background-color: black;
+			opacity: 0.85;
+		}
+
+		.navbar a {
+			float: left;
+			display: block;
+			color: #f2f2f2;
+			text-align: center;
+			padding: 1px 16px;
+			text-decoration: none;
+		}
+
+		.main {
+			padding: 13px;
+			margin-top: 50px;
+			height: 1500px;
+			/* Used in this example to enable scrolling */
+
+		}
+
+		.null {
+			display: none;
+			visibility: hidden;
+		}
+
+		@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:100,400');
+
+		/* Hover Effect Animations */
+		@keyframes StarBackground {
+			10% {
+				background-color: rgba(255, 255, 255, 0.1);
+				filter: blur(1px);
+			}
+
+			20% {
+				background-color: rgba(255, 255, 255, 0);
+			}
+
+			40% {
+				background-color: rgba(255, 255, 255, 0.05);
+			}
+
+			50% {
+				background-color: rgba(255, 255, 255, 0);
+			}
+
+			60% {
+				background-color: rgba(255, 255, 255, 0.3);
+			}
+
+			70% {
+				background-color: rgba(255, 255, 255, 0);
+				filter: blur(2px);
+			}
+
+			80% {
+				background-color: rgba(255, 255, 255, 0.2);
+			}
+
+			90% {
+				background-color: rgba(255, 255, 255, 0.1);
+			}
+
+			100% {
+				background-color: rgba(255, 255, 255, 0.09);
+			}
+		}
+
+		@keyframes StarBorderColor {
+			10% {
+				border-color: rgba(255, 255, 255, 0.1);
+			}
+
+			20% {
+				border-color: rgba(255, 255, 255, 0.05);
+			}
+
+			40% {
+				border-color: rgba(255, 255, 255, 0);
+			}
+
+			50% {
+				border-color: rgba(255, 255, 255, 0.3);
+			}
+
+			60% {
+				border-color: rgba(255, 255, 255, 0);
+			}
+
+			70% {
+				border-color: rgba(255, 255, 255, 0.2);
+			}
+
+			80% {
+				border-color: rgba(255, 255, 255, 0.7);
+			}
+
+			90% {
+				border-color: rgba(255, 255, 255, 0);
+			}
+
+			100% {
+				border-color: rgba(255, 255, 255, 0.4);
+			}
+		}
+
+		/* Button Styling */
+		.btn-star {
+			position: relative;
+			background-color: rgba(255, 255, 255, 0.03);
+			padding: 10px 30px;
+			display: block;
+			max-width: 140px;
+			margin: 0 auto;
+			color: rgba(255, 255, 255, 0.6);
+			font-weight: 100;
+			transition: color 0.5s ease, background-color 0.1s ease;
+		}
+
+		.btn-star .top_left,
+		.btn-star .top_right,
+		.btn-star .bottom_left,
+		.btn-star .bottom_right {
+			width: 10px;
+			height: 10px;
+			position: absolute;
+		}
+
+		.btn-star .bottom_right,
+		.btn-star .bottom_left {
+			bottom: 0;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+		}
+
+		.btn-star .top_left,
+		.btn-star .top_right {
+			top: 0;
+			border-top: 1px solid rgba(255, 255, 255, 0.3);
+		}
+
+		.btn-star .top_left,
+		.btn-star .bottom_left {
+			left: 0;
+			border-left: 1px solid rgba(255, 255, 255, 0.3);
+		}
+
+		.btn-star .top_right,
+		.btn-star .bottom_right {
+			right: 0;
+			border-right: 1px solid rgba(255, 255, 255, 0.3);
+		}
+
+		.btn-star::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			border: 1px solid transparent;
+			top: 0;
+			left: 0;
+			transition: border-color 0.2s ease;
+		}
+
+		.btn-star:hover {
+			animation: StarBackground 0.5s;
+			background-color: rgba(255, 255, 255, 0.09);
+			color: rgba(255, 255, 255, 1);
+		}
+
+		.btn-star:hover .top_left,
+		.btn-star:hover .top_right,
+		.btn-star:hover .bottom_left,
+		.btn-star:hover .bottom_right {
+			border: none;
+		}
+
+		.btn-star:hover::before {
+			border-color: rgba(255, 255, 255, 0.4);
+			animation: StarBorderColor 1s;
+		}
+
+		.title {
+			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+		}
+	</style>
+</head>
+
+<body style="background-color: black;">
+	<header id="header">
+		<div class="container">
+			<div id="logo" class="pull-left">
+				<h1><a href="#body"><img src="img/tedxsiuhyd.jpg" height="70px" width="180px"></a>
+				</h1>
+			</div>
+			<nav style="float: right;" id="nav-menu-container">
+				<ul class="nav-menu">
+					<li class="menu-active"><a href="index.html#body">HOME</a></li>
+					<li><a href="index.html">ABOUT</a></li>
+					<li><a href="index.html#portfolio">MEDIA</a></li>
+					<li><a href="index.html#clients">PARTNERS</a></li>
+					<li><a href="index.html#contact">VENUE</a></li>
+					<li>
+					<li><a href="https://forms.gle/MeHNR8V3eLM3C7kz9">TEAM</a></li>
+
+					</li>
+					<li>
+					<li><a href="speakers.html">SPEAKERS</a></li>
+
+					</li>
+					<li>
+					<li><a href="#">TICKETS</a></li>
+
+					</li>
+					<li style="color:grey; padding-top:10px">|</li>
+					<li class="social-links">
+					<li>
+						<a href="https://www.instagram.com/tedxsiuhyderabad?igsh=MW94cW5yeHk5b3RsaQ=="
+							class="instagram"><i class="fa fa-instagram"></i></a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/company/tedx-siu-hyderabad/" class="linkedln"><i
+								class="fa fa-linkedin"></i></a>
+					</li>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="main">
+		<div class="containerteam">
+			<br>
+			<br>
+			<h3 id="teamheading">CORE TEAM</h3>
+			<div class="album-item">
+				<img src="img/profileimgs/saanvi-sit.jpg" alt="Participant 1 Photo Placeholder">
+				<h3>SAANVI</h3>
+				<!--<a href="#" class="linkedin-button"><img src="img/lkdbtn.png" alt="LinkedIn"></a>-->
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/saanvi-dande?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/akashsir.png" alt="Participant 2 Photo Placeholder">
+				<h3>AKASH RAO</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/akash-rao-mallareddy" class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/meenakshi.jpg" alt="Participant 4 Photo Placeholder">
+				<h3>MEENAKSHI</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="#" class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/ananya-sit.jpg" alt="Participant 3 Photo Placeholder">
+				<h3>ANANYA</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/ananya-srivastava-b5050a323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<h3 id="teamheading">COMMUNICATION TEAM</h3>
+			<div class="album-item">
+				<img src="img/profileimgs/dharsh.jpg" alt="Participant 8 Photo Placeholder">
+				<h3>DHARSHVARADH</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="#" class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/vainavi.jpg" alt="Participant 6 Photo Placeholder">
+				<h3>KVS VAINAVI</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/vainavi-kotagiri-aa37a4285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/aditi.jpg" alt="Participant 7 Photo Placeholder">
+				<h3>ADITI BHALSING</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/aditi-bhalsing-5681a8220?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/srujana-sit.jpg" alt="Participant 8 Photo Placeholder">
+				<h3>PVL SRUJANA</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/lakshmi-srujana-645535312?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/vaishnavi.jpg" alt="Participant 8 Photo Placeholder">
+				<h3>VAISHNAVI VIDYALAYA</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/vaishnavi-v-b92b5428a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<h3 id="teamheading">PRODUCTION TEAM</h3>
+			<div class="album-item">
+				<img src="img/profileimgs/zak-sit.jpg" alt="Participant 9 Photo Placeholder">
+				<h3>MD ZAKUIR RAHMAN</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/md-zakiur-rahman-210335299?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/riya-sit.jpg" alt="Participant 10 Photo Placeholder">
+				<h3>RIYA SHASTRI</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/riya-s-143326322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/gunisha.jpg" alt="Participant 11 Photo Placeholder">
+				<h3>GUNISHA AGARWAL</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/gunisha-agarwal-0689a6304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/parthiv.jpg" alt="Participant 12 Photo Placeholder">
+				<h3>KU PARTHIV</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="www.linkedin.com/in/parthiv-keyatoor-3b108a379" class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/pramit-sit.jpg" alt="Participant 12 Photo Placeholder">
+				<h3>PRAMIT PANIGRAHI</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/pramit-panigrahi-77aa0a321?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/anvi-sit.jpg" alt="Participant 12 Photo Placeholder">
+				<h3>ANVI TRIVEDI</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="" class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<h3 id="teamheading">LOGISTICS TEAM</h3>
+			<div class="album-item">
+				<img src="img/profileimgs/daniel.png" alt="Participant 9 Photo Placeholder">
+				<h3>DANIEL GEORGE</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/daniel-george-497003369?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/smaran.jpg" alt="Participant 9 Photo Placeholder">
+				<h3>SMARAN JAIANAND</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="www.linkedin.com/in/smaran-jaianand" class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/asmi.jpg" alt="Participant 10 Photo Placeholder">
+				<h3>ASMI AGARWAL</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/asmi-agarwal-7095a7374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/adwita.jpg" alt="Participant 11 Photo Placeholder">
+				<h3>ADWITA PRAVISH</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/adwita-pravish-19866b368?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/ananya-sinha.jpg" alt="Participant 12 Photo Placeholder">
+				<h3>ANANYA SINHA</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/ananya-sinha-43875a292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/parth.jpg" alt="Participant 9 Photo Placeholder">
+				<h3>PARTH S</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/parth-shrivastav-30a287323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+
+			<h3 id="teamheading">HOSPITALITY TEAM</h3>
+			<div class="album-item">
+				<img src="img/profileimgs/yashodhara.jpg" alt="Participant 13 Photo Placeholder">
+				<h3>YASHODHARA</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="#" class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/hasini-sit.jpg" alt="Participant 14 Photo Placeholder">
+				<h3>HASINI KURIKALA</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/hasini-kurikala-481577322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/anshu.jpg" alt="Participant 15 Photo Placeholder">
+				<h3>ANSHU PARCHURI</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/anshu-priya-parchuri-b9b791251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/anugna.jpg" alt="Participant 16 Photo Placeholder">
+				<h3>ANUGNA</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/bh-v-s-m-anugna?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/anuja.jpg" alt="Participant 16 Photo Placeholder">
+				<h3>ANUJA CHOUDARY</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="http://www.linkedin.com/in/anuja-choudhury-155244322" class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/isha.jpg" alt="Participant 16 Photo Placeholder">
+				<h3>ISHA</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/isha-deshmukh?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/sushama.jpg" alt="Participant 16 Photo Placeholder">
+				<h3>SUSHAMA</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/sushamamorri?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<h3 id="teamheading">SPONSORSHIP & MARKETING TEAM</h3>
+			<div class="album-item">
+				<img src="img/profileimgs/anirudh-sit.jpg" alt="Participant 17 Photo Placeholder">
+				<h3>ANIRUDH PRATAP SINGH YADAV</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/anirudh-pratap-singh-yadav-79478b264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/sujay.jpg" alt="Participant 18 Photo Placeholder">
+				<h3>SUJAY INDUPURU</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/sujay-indupuru-756654312?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/shreyashka.jpg" alt="Participant 20 Photo Placeholder">
+				<h3>SHREYASHKA SENGAR</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="https://www.linkedin.com/in/shreyashka-sengar-907596370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+					class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/advika.jpg" alt="Participant 20 Photo Placeholder">
+				<h3>ADVIKA</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="#" class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+			<div class="album-item">
+				<img src="img/profileimgs/sricharan.jpg" alt="Participant 16 Photo Placeholder">
+				<h3>SRI CHARAN RAO</h3>
+				<p class="album-item-placeholder"></p>
+				<a href="http://www.linkedin.com/in/sricharan-rao-421152323" class="btn-star">
+					<span class="top_left"></span>
+					<span class="top_right"></span>
+					<span class="title">
+						Linkedin
+					</span>
+					<span class="bottom_left"></span>
+					<span class="bottom_right"></span>
+				</a>
+			</div>
+		</div>
+
+
+
+		<div class="wow fadeInUp">
+			<div class="footer">
+				<div class="footer-left">
+					<img src="img/tedxsiuhyd.jpg" alt="TEDxSIUH Logo">
+				</div>
+				<div class="footer-left">
+					<p class="copyright">@Copyright 2025 - TEDxSIU Hyderabad</p>
+				</div>
+				<div class="footer-right">
+					<a href="#"><i class="fa fa-instagram"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		.footer {
+			max-width: 1400px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px 40px;
+			background-color: black;
+			color: white;
+		}
+
+		.footer-left img {
+			height: 90px;
+			width: auto;
+		}
+
+		.footer-right a {
+			color: white;
+			background-color: #000000;
+			margin-left: 10px;
+			padding: 8px;
+			border-radius: 6px;
+			display: inline-block;
+			text-align: center;
+			transition: background-color 0.3s ease;
+		}
+
+		.footer-right a:hover {
+			background-color: rgba(220, 39, 39, 0.9);
+		}
+
+		.copyright {
+			font-size: 20px;
+			margin-top: 6px;
+			color: #999;
+		}
+	</style>
+
+	</div>
+	<script>
+		document.body.style.display = "block";
+	</script>
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
