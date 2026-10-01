@@ -3,8 +3,9 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // GitHub project Pages serves this site below /tedxwebsiteS2/.
-  // Keep the local development server at the normal root URL.
-  base: process.env.GITHUB_ACTIONS === 'true' ? '/tedxwebsiteS2/' : '/',
+  // The GitHub Pages project is served from the custom-domain root.
+  // Keeping this at `/` makes generated JS, CSS, and public asset URLs resolve
+  // from https://tedxsiuhyderabad.siu.edu.in/ instead of /tedxwebsiteS2/.
+  base: '/',
   plugins: [react()],
 })
