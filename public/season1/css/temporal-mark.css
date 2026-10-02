@@ -1,0 +1,25 @@
+/* Transition refinements loaded after the legacy archive stylesheet. */
+.legacy-time-jump__traveller{width:64px;height:46px}
+.legacy-time-jump__core{width:64px;height:46px;border:0;border-radius:0;color:inherit;background:transparent;box-shadow:none;font:inherit}
+.legacy-time-jump__xmark{display:block;width:68px;height:auto;overflow:visible;filter:drop-shadow(0 0 9px rgba(230,43,30,.5))}
+.legacy-time-jump__xframe{fill:rgba(7,7,9,.94);stroke:rgba(226,193,124,.62);stroke-width:1}
+.legacy-time-jump__xcorners{fill:none;stroke:rgba(248,245,237,.55);stroke-width:1;stroke-linecap:square}
+.legacy-time-jump__xglyph{fill:#e62b1e;filter:drop-shadow(0 0 5px rgba(230,43,30,.72))}
+.legacy-time-jump__traveller::after{inset:-5px -8px;border:0;border-left:1px solid rgba(226,193,124,.42);border-right:1px solid rgba(226,193,124,.42);border-radius:0}
+.legacy-page-transition.is-future .legacy-time-jump__traveller::before{right:31px}
+.legacy-page-transition.is-back .legacy-time-jump__traveller::before{left:31px}
+
+.legacy-page-transition.is-page.is-leaving{animation:legacy-page-fade-in 420ms ease both}
+.legacy-page-transition.is-page.is-entering{animation:legacy-page-fade-out 480ms ease both}
+.legacy-page-transition.is-page .legacy-transition__timecode,
+.legacy-page-transition.is-page .legacy-time-jump,
+.legacy-page-transition.is-page .legacy-transition__coordinates{display:none}
+.legacy-page-transition.is-temporal .legacy-page-fade{display:none}
+.legacy-page-fade{position:absolute;inset:0;z-index:3;display:grid;place-content:center;justify-items:center;gap:18px}
+.legacy-page-fade__xmark{width:54px;filter:drop-shadow(0 0 12px rgba(230,43,30,.35))}
+.legacy-page-fade__xglyph{fill:#e62b1e}
+.legacy-page-fade>span{width:76px;height:1px;background:linear-gradient(90deg,transparent,rgba(226,193,124,.7),transparent);animation:legacy-page-line 700ms ease-in-out infinite alternate}
+@keyframes legacy-page-fade-in{from{opacity:0;visibility:visible}to{opacity:1;visibility:visible}}
+@keyframes legacy-page-fade-out{from{opacity:1;visibility:visible}to{opacity:0;visibility:hidden}}
+@keyframes legacy-page-line{from{transform:scaleX(.25);opacity:.25}to{transform:scaleX(1);opacity:1}}
+@media(prefers-reduced-motion:reduce){.legacy-page-transition.is-page.is-leaving,.legacy-page-transition.is-page.is-entering{animation-duration:1ms}.legacy-page-fade>span{animation:none}}

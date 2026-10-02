@@ -1,45 +1,75 @@
 import { useEffect, useState } from 'react';
 
 const TRANSITION_KEY = 'tedx-page-transition';
-const EXIT_DURATION = 460;
-const ENTRY_DURATION = 720;
+const DIRECTION_KEY = 'tedx-transition-direction';
+const MODE_KEY = 'tedx-transition-mode';
+const TEMPORAL_EXIT_DURATION = 2200;
+const TEMPORAL_ENTRY_DURATION = 960;
+const PAGE_EXIT_DURATION = 420;
+const PAGE_ENTRY_DURATION = 480;
 
-const readTransitionArrival = () => {
+type TransitionPhase = 'idle' | 'entering' | 'leaving';
+type TimeDirection = 'back' | 'future';
+type TransitionMode = 'page' | 'temporal';
+
+const readSessionValue = (key: string) => {
   try {
-    return sessionStorage.getItem(TRANSITION_KEY) === 'true';
+    return sessionStorage.getItem(key);
   } catch {
-    return false;
+    return null;
   }
 };
 
+const readTransitionArrival = () => readSessionValue(TRANSITION_KEY) === 'true';
+const readTransitionDirection = (): TimeDirection =>
+  readSessionValue(DIRECTION_KEY) === 'back' ? 'back' : 'future';
+const readTransitionMode = (): TransitionMode =>
+  readSessionValue(MODE_KEY) === 'temporal' ? 'temporal' : 'page';
+
+const TedxTimeMark = ({ compact = false }: { compact?: boolean }) => (
+  <svg
+    className={compact ? 'page-fade__xmark' : 'time-jump__xmark'}
+    viewBox="0 0 76 52"
+    aria-hidden="true"
+    focusable="false"
+  >
+    {!compact && <path className="time-jump__xframe" d="M10 3h56l7 7v32l-7 7H10l-7-7V10z" />}
+    {!compact && <path className="time-jump__xcorners" d="M12 8h13M51 8h13M12 44h13M51 44h13" />}
+    <path className={compact ? 'page-fade__xglyph' : 'time-jump__xglyph'} d="M23 14h11.2L38 20.6 41.8 14H53L44 26l9 12H41.8L38 31.4 34.2 38H23l9-12z" />
+  </svg>
+);
+
 export const PageTransition = () => {
-  const [phase, setPhase] = useState<'idle' | 'entering' | 'leaving'>(() =>
+  const [phase, setPhase] = useState<TransitionPhase>(() =>
     readTransitionArrival() ? 'entering' : 'idle',
   );
-  const [destination, setDestination] = useState('MERAKI · SEASON TWO');
+  const [direction, setDirection] = useState<TimeDirection>(readTransitionDirection);
+  const [mode, setMode] = useState<TransitionMode>(readTransitionMode);
+  const [message, setMessage] = useState(() =>
+    readTransitionDirection() === 'back' ? 'GOING BACK IN TIME' : 'GOING INTO THE FUTURE',
+  );
 
   useEffect(() => {
     if (phase !== 'entering') return;
 
     try {
       sessionStorage.removeItem(TRANSITION_KEY);
+      sessionStorage.removeItem(DIRECTION_KEY);
+      sessionStorage.removeItem(MODE_KEY);
     } catch {
       // Storage may be unavailable in private browsing. The animation can still finish.
     }
 
-    const timer = window.setTimeout(() => setPhase('idle'), ENTRY_DURATION);
+    const duration = mode === 'temporal' ? TEMPORAL_ENTRY_DURATION : PAGE_ENTRY_DURATION;
+    const timer = window.setTimeout(() => setPhase('idle'), duration);
     return () => window.clearTimeout(timer);
-  }, [phase]);
+  }, [mode, phase]);
 
   useEffect(() => {
     const handleNavigation = (event: MouseEvent) => {
       if (
-        event.defaultPrevented ||
-        event.button !== 0 ||
-        event.metaKey ||
-        event.ctrlKey ||
-        event.shiftKey ||
-        event.altKey
+        event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey ||
+        event.shiftKey || event.altKey
       ) return;
 
       const target = event.target as Element | null;
@@ -56,17 +86,26 @@ export const PageTransition = () => {
       const nextPage = `${nextUrl.pathname}${nextUrl.search}`;
       if (currentPage === nextPage) return;
 
+      const isSeasonSwitch = nextUrl.pathname.includes('season1');
+      const nextMode: TransitionMode = isSeasonSwitch ? 'temporal' : 'page';
+      const nextDirection: TimeDirection = isSeasonSwitch ? 'back' : 'future';
+
       event.preventDefault();
-      setDestination(nextUrl.pathname.includes('season1') ? 'SEASON ONE ARCHIVE' : 'MERAKI · SEASON TWO');
+      setMode(nextMode);
+      setDirection(nextDirection);
+      setMessage(isSeasonSwitch ? 'GOING BACK IN TIME' : 'GOING INTO THE FUTURE');
       setPhase('leaving');
 
       try {
         sessionStorage.setItem(TRANSITION_KEY, 'true');
+        sessionStorage.setItem(DIRECTION_KEY, nextDirection);
+        sessionStorage.setItem(MODE_KEY, nextMode);
       } catch {
         // Navigation still works when session storage is unavailable.
       }
 
-      window.setTimeout(() => window.location.assign(nextUrl.href), EXIT_DURATION);
+      const duration = nextMode === 'temporal' ? TEMPORAL_EXIT_DURATION : PAGE_EXIT_DURATION;
+      window.setTimeout(() => window.location.assign(nextUrl.href), duration);
     };
 
     document.addEventListener('click', handleNavigation);
@@ -75,30 +114,36 @@ export const PageTransition = () => {
 
   return (
     <div
-      className={`page-transition page-transition--${phase}`}
+      className={`page-transition page-transition--${phase} page-transition--${mode} page-transition--${direction}`}
       aria-hidden={phase === 'idle'}
       aria-live="polite"
     >
-      <div className="page-transition__grain" />
-      <div className="page-transition__topline">
-        <span>TEDxSIU HYDERABAD</span>
-        <span>{destination}</span>
+      <div className="page-transition__void" />
+
+      <div className="page-fade" aria-hidden="true">
+        <TedxTimeMark compact />
+        <span className="page-fade__line" />
       </div>
-      <div className="page-transition__skeleton" aria-label="Loading page">
-        <div className="page-transition__eyebrow skeleton-shimmer" />
-        <div className="page-transition__headline skeleton-shimmer" />
-        <div className="page-transition__headline page-transition__headline--short skeleton-shimmer" />
-        <div className="page-transition__copy skeleton-shimmer" />
-        <div className="page-transition__cards">
-          <div className="page-transition__card skeleton-shimmer" />
-          <div className="page-transition__card skeleton-shimmer" />
-          <div className="page-transition__card skeleton-shimmer" />
+
+      <div className="page-transition__timecode">TEDxSIU HYDERABAD · TEMPORAL ARCHIVE</div>
+      <div className="time-jump" aria-label={message}>
+        <p className="time-jump__message">{message}</p>
+        <div className="time-jump__rail-row">
+          <span className="time-jump__era time-jump__era--one"><b>1</b><small>SEASON ONE</small></span>
+          <div className="time-jump__track" aria-hidden="true">
+            <span className="time-jump__ticks" />
+            <span className="time-jump__progress" />
+            <span className="time-jump__traveller"><span className="time-jump__core"><TedxTimeMark /></span></span>
+          </div>
+          <span className="time-jump__era time-jump__era--two"><b>2</b><small>MERAKI</small></span>
+        </div>
+        <div className="time-jump__direction">
+          <span>{direction === 'back' ? 'PAST' : 'ORIGIN'}</span>
+          <span>{direction === 'back' ? 'REWINDING THE ARCHIVE' : 'ADVANCING THE STORY'}</span>
+          <span>{direction === 'back' ? 'PRESENT' : 'FUTURE'}</span>
         </div>
       </div>
-      <div className="page-transition__status">
-        <span className="page-transition__mark">×</span>
-        <span>CURATING THE NEXT FRAME</span>
-      </div>
+      <div className="page-transition__coordinates"><span>09 · 10</span><span>HYDERABAD</span></div>
     </div>
   );
 };
