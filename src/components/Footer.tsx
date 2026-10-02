@@ -105,10 +105,10 @@ export const Footer: React.FC = () => {
               Symbiosis International (Deemed University), Hyderabad Campus.
             </p>
             <p style={{ fontSize: '13px', color: 'var(--text-muted)', lineHeight: 1.6, display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Mail size={14} color="var(--greek-gold)" /> Inquiries: <span style={{ color: '#fff' }}>tedx@siuh.edu.in</span>
+              <Mail size={14} color="var(--greek-gold)" /> Inquiries: <a href="mailto:tedxsiu@sithyd.siu.edu.in" style={{ color: '#fff', textDecoration: 'none' }}>tedxsiu@sithyd.siu.edu.in</a>
             </p>
             <p style={{ fontSize: '13px', color: 'var(--text-muted)', lineHeight: 1.6, display: 'flex', alignItems: 'center', gap: '6px', marginTop: '6px' }}>
-              <Globe size={14} color="var(--greek-gold)" /> Official: <span style={{ color: '#fff' }}>siuh.edu.in</span>
+              <Globe size={14} color="var(--greek-gold)" /> Official Website: <a href="https://sithyd.edu.in" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>sithyd.edu.in</a>
             </p>
           </div>
         </div>

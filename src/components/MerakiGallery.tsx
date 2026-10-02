@@ -19,8 +19,8 @@ export const MerakiGallery: React.FC = () => {
   return (
     <section id="gallery" style={{ padding: '80px 0 100px', position: 'relative', overflow: 'hidden' }}>
       <div className="container" style={{ marginBottom: '40px', textAlign: 'center' }}>
-        <h2 style={{ fontSize: 'clamp(30px, 4.5vw, 46px)', fontFamily: 'var(--font-classical)', color: 'var(--text-main)', marginBottom: '12px' }}>
-          Visual Echoes of <span className="text-gradient-meraki">Meraki</span>
+        <h2 className="editorial-heading" style={{ fontSize: 'clamp(30px, 4.5vw, 46px)', fontFamily: 'var(--font-classical)', color: 'var(--text-main)', marginBottom: '12px' }}>
+          Visual Echoes of <span className="text-gradient-meraki meraki-wordmark">Meraki</span>
         </h2>
         <p style={{ color: 'var(--text-muted)', fontSize: '16px', fontFamily: 'var(--font-editorial)', fontStyle: 'italic', maxWidth: '640px', margin: '0 auto' }}>
           Season 2 photographs and visual stories will appear here as they are released.

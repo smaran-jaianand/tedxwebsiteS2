@@ -1,0 +1,83 @@
+.sequential-loader {
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  overflow: hidden;
+  background: #060608;
+  color: var(--text-main);
+  pointer-events: all;
+}
+
+.sequential-loader__mask {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(235, 0, 40, 0.22), transparent 24rem),
+    linear-gradient(145deg, #13070b, #060608 50%, #0e090b);
+  will-change: clip-path;
+}
+
+.sequential-loader__content {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.sequential-loader__composition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3vw, 42px);
+  width: 100%;
+  padding: 24px;
+}
+
+.sequential-loader__composition.has-image {
+  flex-direction: column;
+  gap: 0;
+}
+
+.sequential-loader__word {
+  color: #f3e5c8;
+  font-family: var(--font-classical);
+  font-size: clamp(28px, 5.6vw, 78px);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 0.9;
+  white-space: nowrap;
+  text-shadow: 0 0 28px rgba(235, 0, 40, 0.35);
+}
+
+.sequential-loader__word--meraki { color: var(--ted-red-light); }
+
+.sequential-loader__image-frame {
+  position: relative;
+  overflow: hidden;
+  flex: none;
+  border: 1px solid rgba(226, 193, 124, 0.6);
+  background: #0c080a;
+  box-shadow: 0 0 0 8px rgba(235, 0, 40, 0.07), 0 26px 80px rgba(0, 0, 0, 0.6);
+}
+
+.sequential-loader__image {
+  position: absolute;
+  inset: -8%;
+  width: 116%;
+  height: 116%;
+  max-width: none;
+  object-fit: cover;
+  filter: saturate(0.72) contrast(1.08) brightness(0.7);
+  user-select: none;
+}
+
+.sequential-loader__image-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(235, 0, 40, 0.17), transparent 48%, rgba(226, 193, 124, 0.1));
+}
+
+@media (max-width: 700px) {
+  .sequential-loader__word { font-size: clamp(25px, 10vw, 48px); }
+}

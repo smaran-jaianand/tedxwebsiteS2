@@ -97,7 +97,7 @@ export const ThemeManifesto: React.FC = () => {
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 64px' }}>
           <h2
-            className="manifesto-reveal"
+            className="manifesto-reveal editorial-heading"
             style={{
               fontSize: 'clamp(32px, 5vw, 56px)',
               fontFamily: 'var(--font-classical)',
@@ -106,7 +106,7 @@ export const ThemeManifesto: React.FC = () => {
               textTransform: 'uppercase',
             }}
           >
-            To Put <span className="text-gradient-meraki">Yourself</span> Into Your Work
+            To Put <em>Yourself</em><br />Into Your Work
           </h2>
           <p
             className="manifesto-reveal"
@@ -216,6 +216,7 @@ export const ThemeManifesto: React.FC = () => {
           >
             <div>
               <h3
+                className="editorial-heading editorial-heading--compact"
                 style={{
                   fontSize: 'clamp(26px, 3.5vw, 38px)',
                   fontFamily: 'var(--font-classical)',
@@ -224,7 +225,7 @@ export const ThemeManifesto: React.FC = () => {
                   color: '#fff',
                 }}
               >
-                The Pomegranate & The Return to <span className="text-ted-red">Light</span>
+                The Pomegranate & The Return to <em>Light</em>
               </h3>
 
               <p style={{ color: '#cbd5e1', fontSize: '16px', lineHeight: 1.8, marginBottom: '20px' }}>

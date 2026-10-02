@@ -18,7 +18,7 @@ export const LegacyBanner = () => {
       <div className="season-one-gallery-wrap">
         <div className="season-one-gallery__heading" aria-hidden="true">
           <span>THE ARCHIVE</span>
-          <h2>Season <em>01</em></h2>
+          <h2 className="editorial-heading">Season <em>01</em></h2>
         </div>
 
         <div className="season-one-gallery" aria-label="Season 1 archive highlights">
@@ -33,7 +33,7 @@ export const LegacyBanner = () => {
       <div className="container season-one-archive__summary">
         <div>
           <div className="season-one-archive__eyebrow"><History size={14} /> HONORING THE GENESIS</div>
-          <h2>Before Meraki: <span className="text-ted-red">Season 1</span></h2>
+          <h2 className="editorial-heading">Before <span className="meraki-wordmark">Meraki</span>: <em>Season 1</em></h2>
           <p>
             The inaugural TEDxSIU Hyderabad gathering established the red circle that Season 2 now carries forward.
           </p>

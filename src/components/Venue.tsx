@@ -8,8 +8,8 @@ export const Venue: React.FC = () => {
       <div className="container">
         
         <div style={{ textAlign: 'center', maxWidth: '740px', margin: '0 auto 54px' }}>
-          <h2 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontFamily: 'var(--font-classical)', marginBottom: '16px', letterSpacing: '0.04em' }}>
-            Symbiosis International University <span className="text-gradient-meraki">Hyderabad</span>
+          <h2 className="editorial-heading" style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontFamily: 'var(--font-classical)', marginBottom: '16px', letterSpacing: '0.04em' }}>
+            Symbiosis International University <em>Hyderabad</em>
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '18px', fontFamily: 'var(--font-editorial)', fontStyle: 'italic' }}>
             A serene academic sanctuary on the outskirts of Hyderabad, providing an intimate amphitheater for 9th October.

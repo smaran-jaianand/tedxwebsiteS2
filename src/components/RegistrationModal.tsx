@@ -164,7 +164,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
         </button>
 
         <div className="registration-modal__header">
-          <h2>Claim Your <span className="text-gradient-meraki">Meraki Pass</span></h2>
+          <h2 className="editorial-heading">Claim Your <span className="text-gradient-meraki meraki-wordmark">Meraki Pass</span></h2>
           <p>Generate a personalised, tearable pass for TEDxSIU Hyderabad.</p>
         </div>
 

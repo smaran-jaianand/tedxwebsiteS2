@@ -71,8 +71,8 @@ export const HorizontalScroll: React.FC = () => {
   return (
     <section ref={sectionRef} id="scroller" className="Horizontal">
       <div className="container" style={{ maxWidth: '100%' }}>
-        <h3 ref={textRef} className="Horizontal__text heading-xl" style={{ willChange: 'transform' }}>
-          ΜΕRΑΚΙ • TO PUT SOMETHING OF YOURSELF INTO YOUR WORK • SOUL • CREATIVITY • LOVE • 9TH OCTOBER 2026 • TEDxSIU HYDERABAD
+        <h3 ref={textRef} className="Horizontal__text heading-xl editorial-heading" style={{ willChange: 'transform' }}>
+          <span className="meraki-wordmark">ΜΕRΑΚΙ</span> • TO PUT SOMETHING OF YOURSELF INTO YOUR WORK • SOUL • CREATIVITY • LOVE • 9TH OCTOBER 2026 • TEDxSIU HYDERABAD
         </h3>
       </div>
     </section>

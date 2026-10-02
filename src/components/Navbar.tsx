@@ -123,7 +123,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
             <span aria-disabled="true" title="Team page coming soon" style={disabledNavLinkStyle}>Team</span>
           </nav>
           
-          {/* Season Switcher Pill */}
+          {/* Season Switcher — consistent S2 → S1 order across both sites */}
           <div
             className="navbar-season-switcher"
             style={{
@@ -135,10 +135,25 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
               border: '1px solid var(--border-subtle)',
             }}
           >
+            <span
+              aria-current="page"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px',
+                padding: '6px 14px',
+                fontSize: '12px',
+                color: '#ffffff',
+                background: 'var(--ted-red)',
+                borderRadius: '9999px',
+                fontWeight: 700,
+              }}
+            >
+              <Sparkles size={11} />
+              <span className="season2-txt">Season 2</span>
+            </span>
             <a
               href={sitePath('season1/index.html')}
-              target="_blank"
-              rel="noopener noreferrer"
               className="cursor-target"
               style={{
                 display: 'inline-flex',
@@ -157,22 +172,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
               <History size={12} />
               <span className="season-txt">Season 1</span> <ArrowUpRight size={11} />
             </a>
-            <span
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '4px',
-                padding: '6px 14px',
-                fontSize: '12px',
-                color: '#ffffff',
-                background: 'var(--ted-red)',
-                borderRadius: '9999px',
-                fontWeight: 700,
-              }}
-            >
-              <Sparkles size={11} />
-              <span className="season2-txt">Season 2</span>
-            </span>
           </div>
 
           {/* Claim Pass Button */}

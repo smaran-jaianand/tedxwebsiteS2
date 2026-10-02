@@ -45,6 +45,7 @@
 	<meta name="description"
 		content="Official TEDx SIU Hyderabad by Symbiosis International University – a platform for inspiring talks, fresh ideas, and powerful stories worth sharing.">
 
+	<link rel="stylesheet" href="css/season-switcher.css">
 </head>
 
 <body id="body" name="body">
@@ -235,7 +236,8 @@
 				document.getElementById("second").innerHTML = seconds;
 				if (t < 0) {
 					clearInterval(x);
-					document.getElementById("demo").innerHTML = "TIME UP";
+					var countdownStatus = document.getElementById("demo");
+					if (countdownStatus) countdownStatus.innerHTML = "TIME UP";
 					document.getElementById("day").innerHTML = '0';
 					document.getElementById("hour").innerHTML = '0';
 					document.getElementById("minute").innerHTML = '0';
@@ -1003,6 +1005,7 @@
 	<script src="js/main.js"></script>
 
 
+	<script src="js/season-switcher.js"></script>
 </body>
 
 </html>

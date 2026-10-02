@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -14,6 +14,10 @@ import { Venue } from './components/Venue';
 import { Footer } from './components/Footer';
 import { MacDock } from './components/MacDock';
 import { Speakers } from './components/Speakers';
+import { Team } from './components/Team';
+import { LandingPreloader } from './components/LandingPreloader';
+import { PageTransition } from './components/PageTransition';
+import { shouldShowLandingPreloader } from './components/preloaderState';
 import { currentRoute } from './sitePath';
 
 // These two sections pull in the heaviest interactive dependencies (Motion and
@@ -64,6 +68,15 @@ const DeferredGallery = () => {
 export function App() {
   const route = currentRoute();
   const isSpeakersPage = route === '/speakers';
+  const isTeamPage = route === '/team';
+  const [shouldPlayPreloader] = useState(shouldShowLandingPreloader);
+  const [isSiteRevealed, setIsSiteRevealed] = useState(() => !shouldPlayPreloader);
+  const [isPreloaderVisible, setIsPreloaderVisible] = useState(shouldPlayPreloader);
+  const revealSite = useCallback(() => setIsSiteRevealed(true), []);
+  const finishPreloader = useCallback(() => {
+    setIsSiteRevealed(true);
+    setIsPreloaderVisible(false);
+  }, []);
 
   useEffect(() => {
     // Register GSAP plugins
@@ -92,7 +105,16 @@ export function App() {
   }, []);
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh', backgroundColor: 'var(--bg-dark)' }}>
+    <>
+    <div
+      aria-hidden={!isSiteRevealed}
+      style={{
+        position: 'relative',
+        minHeight: '100vh',
+        backgroundColor: 'var(--bg-dark)',
+        visibility: isSiteRevealed ? 'visible' : 'hidden',
+      }}
+    >
 
       <div className="site-dither-veil" aria-hidden="true">
         <Suspense fallback={null}>
@@ -136,12 +158,14 @@ export function App() {
       />
 
       {/* Minimal Top Header */}
-      <Navbar activePage={isSpeakersPage ? 'speakers' : 'home'} />
+      <Navbar activePage={isSpeakersPage ? 'speakers' : isTeamPage ? 'team' : 'home'} />
 
       {/* Page Sections */}
       <main style={{ position: 'relative', zIndex: 1 }}>
         {isSpeakersPage ? (
           <Speakers />
+        ) : isTeamPage ? (
+          <Team />
         ) : (
           <>
         {/* Minimal Hero */}
@@ -178,6 +202,14 @@ export function App() {
       <Footer />
 
     </div>
+    {isPreloaderVisible && (
+      <LandingPreloader
+        onReveal={revealSite}
+        onComplete={finishPreloader}
+      />
+    )}
+    <PageTransition />
+    </>
   );
 }
 
