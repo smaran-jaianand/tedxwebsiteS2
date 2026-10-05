@@ -75,22 +75,22 @@ export const Footer: React.FC = () => {
           {/* Legacy Archives */}
           <div>
             <h4 style={{ fontSize: '14px', color: 'var(--ted-red-light)', marginBottom: '20px', fontFamily: 'var(--font-classical)', letterSpacing: '0.08em' }}>
-              SEASON 1 LEGACY
+              SEASON 1 GLIMPSE
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <li>
-                <a href={sitePath('season1/index.html')} target="_blank" rel="noopener noreferrer" style={{ ...footerLinkStyle, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                  Season 1 Homepage <ArrowUpRight size={14} />
+                <a href={sitePath('?page=archive')} style={{ ...footerLinkStyle, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                  Open the Glimpse <ArrowUpRight size={14} />
                 </a>
               </li>
               <li>
-                <a href={sitePath('season1/speakers.html')} target="_blank" rel="noopener noreferrer" style={{ ...footerLinkStyle, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                <a href={sitePath('?page=archive#archive-voices')} style={{ ...footerLinkStyle, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                   Inaugural Speakers <ArrowUpRight size={14} />
                 </a>
               </li>
               <li>
-                <a href={sitePath('season1/team.html')} target="_blank" rel="noopener noreferrer" style={{ ...footerLinkStyle, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                  Founding Team <ArrowUpRight size={14} />
+                <a href={sitePath('?page=archive#archive-gallery')} style={{ ...footerLinkStyle, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                  Visual Record <ArrowUpRight size={14} />
                 </a>
               </li>
             </ul>

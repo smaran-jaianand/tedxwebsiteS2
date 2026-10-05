@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import type { CSSProperties } from 'react';
+import { sitePath } from '../sitePath';
 
 const TRANSITION_KEY = 'tedx-page-transition';
 const DIRECTION_KEY = 'tedx-transition-direction';
 const MODE_KEY = 'tedx-transition-mode';
-const TEMPORAL_EXIT_DURATION = 2200;
+const TEMPORAL_EXIT_DURATION = 3600;
 const TEMPORAL_ENTRY_DURATION = 960;
 const PAGE_EXIT_DURATION = 420;
 const PAGE_ENTRY_DURATION = 480;
@@ -86,14 +88,19 @@ export const PageTransition = () => {
       const nextPage = `${nextUrl.pathname}${nextUrl.search}`;
       if (currentPage === nextPage) return;
 
-      const isSeasonSwitch = nextUrl.pathname.includes('season1');
+      const currentQueryPage = new URLSearchParams(window.location.search).get('page');
+      const nextQueryPage = nextUrl.searchParams.get('page');
+      const isArchiveDestination = nextQueryPage === 'archive';
+      const isLeavingArchive = currentQueryPage === 'archive' && nextQueryPage !== 'archive';
+      const isLegacySeasonOneSite = nextUrl.pathname.includes('season1');
+      const isSeasonSwitch = isArchiveDestination || isLeavingArchive || isLegacySeasonOneSite;
       const nextMode: TransitionMode = isSeasonSwitch ? 'temporal' : 'page';
-      const nextDirection: TimeDirection = isSeasonSwitch ? 'back' : 'future';
+      const nextDirection: TimeDirection = isArchiveDestination || isLegacySeasonOneSite ? 'back' : 'future';
 
       event.preventDefault();
       setMode(nextMode);
       setDirection(nextDirection);
-      setMessage(isSeasonSwitch ? 'GOING BACK IN TIME' : 'GOING INTO THE FUTURE');
+      setMessage(nextDirection === 'back' ? 'OPENING THE ARCHIVE' : 'GOING INTO THE FUTURE');
       setPhase('leaving');
 
       try {
@@ -127,6 +134,19 @@ export const PageTransition = () => {
 
       <div className="page-transition__timecode">TEDxSIU HYDERABAD · TEMPORAL ARCHIVE</div>
       <div className="time-jump" aria-label={message}>
+        <div className="time-jump__slideshow" aria-hidden="true">
+          {[
+            'season1/img/sliderimgs/maingate.jpeg',
+            'season1/img/sliderimgs/audi.jpeg',
+            'season1/img/sliderimgs/insideaudi.jpeg',
+            'season1/img/sliderimgs/allhostels.jpeg',
+          ].map((src, index) => (
+            <figure key={src} style={{ '--slide-index': index } as CSSProperties}>
+              <img src={sitePath(src)} alt="" />
+              <span>ARCHIVE FRAME · 0{index + 1}</span>
+            </figure>
+          ))}
+        </div>
         <p className="time-jump__message">{message}</p>
         <div className="time-jump__rail-row">
           <span className="time-jump__era time-jump__era--one"><b>1</b><small>SEASON ONE</small></span>

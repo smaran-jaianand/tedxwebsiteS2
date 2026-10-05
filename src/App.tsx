@@ -15,6 +15,7 @@ import { Footer } from './components/Footer';
 import { MacDock } from './components/MacDock';
 import { Speakers } from './components/Speakers';
 import { Team } from './components/Team';
+import { SeasonOneArchive } from './components/SeasonOneArchive';
 import { LandingPreloader } from './components/LandingPreloader';
 import { PageTransition } from './components/PageTransition';
 import { shouldShowLandingPreloader } from './components/preloaderState';
@@ -69,6 +70,7 @@ export function App() {
   const route = currentRoute();
   const isSpeakersPage = route === '/speakers';
   const isTeamPage = route === '/team';
+  const isArchivePage = route === '/archive';
   const [shouldPlayPreloader] = useState(shouldShowLandingPreloader);
   const [isSiteRevealed, setIsSiteRevealed] = useState(() => !shouldPlayPreloader);
   const [isPreloaderVisible, setIsPreloaderVisible] = useState(shouldPlayPreloader);
@@ -158,7 +160,7 @@ export function App() {
       />
 
       {/* Minimal Top Header */}
-      <Navbar activePage={isSpeakersPage ? 'speakers' : isTeamPage ? 'team' : 'home'} />
+      <Navbar activePage={isSpeakersPage ? 'speakers' : isTeamPage ? 'team' : isArchivePage ? 'archive' : 'home'} />
 
       {/* Page Sections */}
       <main style={{ position: 'relative', zIndex: 1 }}>
@@ -166,6 +168,8 @@ export function App() {
           <Speakers />
         ) : isTeamPage ? (
           <Team />
+        ) : isArchivePage ? (
+          <SeasonOneArchive />
         ) : (
           <>
         {/* Minimal Hero */}

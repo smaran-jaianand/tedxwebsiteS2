@@ -79,9 +79,9 @@ export const MacDock: React.FC = () => {
     },
     {
       id: 'season1',
-      title: 'Season 1 Legacy Archive',
+      title: 'Season 1 Glimpse',
       icon: History,
-      href: sitePath('season1/index.html'),
+      href: sitePath('?page=archive'),
       accentColor: 'var(--greek-gold)',
     },
     {

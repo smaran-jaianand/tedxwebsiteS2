@@ -5,6 +5,7 @@ export const currentRoute = () => {
   const queryPage = new URLSearchParams(window.location.search).get('page');
   if (queryPage === 'speakers') return '/speakers';
   if (queryPage === 'team') return '/team';
+  if (queryPage === 'archive') return '/archive';
 
   const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
   const pathname = window.location.pathname;

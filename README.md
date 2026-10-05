@@ -1,32 +1,25 @@
-# React + TypeScript + Vite
+# Season 2 — Meraki
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This is the active TEDxSIU Hyderabad website and the GitHub Pages deployment project.
 
-Currently, two official plugins are available:
+For the full architecture, routes, media conventions, and handoff checklist, read the [workspace README](../README.md) first.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Commands
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm ci
+npm run dev
+npm run lint
+npm run build
+npm run preview
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+The production workflow runs Node 24 and deploys `dist/` through GitHub Pages after every push to `main`.
+
+## Important pointers
+
+- Routes are query-string based and defined in [`src/sitePath.ts`](./src/sitePath.ts).
+- Use `sitePath()` for every internal link and `public/` asset URL.
+- `?page=archive` is the modern **Season 1 Glimpse**, not the preserved static Season 1 site under `public/season1/`.
+- Global tokens and responsive styles live in [`src/styles/index.css`](./src/styles/index.css).
+- The custom domain is configured by [`CNAME`](./CNAME); Vite’s `base` must stay `/` for that deployment model.
