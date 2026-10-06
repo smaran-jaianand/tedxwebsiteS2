@@ -35,7 +35,7 @@ const teamMembers = [
   { circleId: 'logistics', name: 'Meenakshi Vedala', role: 'Co-Lead', image: 'teams/meenakshi.jpg', align: '50% 75%' },
   { circleId: 'logistics', name: 'Sneha Gandhi', role: 'Member', image: 'teams/Sneha.JPG', align: '50% 53%' },
   { circleId: 'logistics', name: 'Aaraadhya Hruthi', role: 'Member', image: 'teams/aaradhya.JPG', align: '50% 30%' },
-  { circleId: 'logistics', name: 'Aparna Velpuri', role: 'Member', image: 'teams/Aparna.JPG', align: '50% 37%' },
+  { circleId: 'logistics', name: 'Aparna Velpuri', role: 'Member', image: 'teams/Aparna.JPG', align: '50% 25%' },
   { circleId: 'logistics', name: 'Madhav Singh', role: 'Member', image: 'teams/madhav.JPG', align: '50% 35%' },
   { circleId: 'logistics', name: 'Adwita Pravish', role: 'Member', image: 'teams/adwita.jpg', align: '50% 100%' },
   { circleId: 'logistics', name: 'Aditya Sampara', role: 'Member', image: 'teams/Aditya.JPG', align: '50% 40%' },
