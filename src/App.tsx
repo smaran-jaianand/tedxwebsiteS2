@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -22,50 +22,7 @@ import { ImageSkeletons } from './components/ImageSkeletons';
 import { shouldShowLandingPreloader } from './components/preloaderState';
 import { currentRoute } from './sitePath';
 
-// These two sections pull in the heaviest interactive dependencies (Motion and
-// the animated wall). Keep them out of the critical path until they are needed.
-const MerakiGallery = lazy(() => import('./components/MerakiGallery'));
 const DitherVeil = lazy(() => import('./components/DitherVeil'));
-const GalleryPlaceholder = () => (
-  <section
-    aria-hidden="true"
-    style={{ minHeight: 780, position: 'relative' }}
-  />
-);
-
-const DeferredGallery = () => {
-  const sentinelRef = useRef<HTMLDivElement>(null);
-  const [isReady, setIsReady] = useState(false);
-
-  useEffect(() => {
-    const sentinel = sentinelRef.current;
-    if (!sentinel) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return;
-        setIsReady(true);
-        observer.disconnect();
-      },
-      { rootMargin: '1200px 0px' },
-    );
-
-    observer.observe(sentinel);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div ref={sentinelRef}>
-      {isReady ? (
-        <Suspense fallback={<GalleryPlaceholder />}>
-          <MerakiGallery />
-        </Suspense>
-      ) : (
-        <GalleryPlaceholder />
-      )}
-    </div>
-  );
-};
 
 export function App() {
   const route = currentRoute();
@@ -191,9 +148,6 @@ export function App() {
 
         {/* Season 1 Legacy Archive Showcase */}
         <LegacyBanner />
-
-        {/* Endless Perspective DriftWall Gallery */}
-        <DeferredGallery />
 
         {/* Campus Venue */}
         <Venue />
