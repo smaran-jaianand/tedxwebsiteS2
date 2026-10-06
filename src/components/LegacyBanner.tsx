@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { ArrowUpRight, Film, History } from 'lucide-react';
 import { sitePath } from '../sitePath';
 
-const ARCHIVE_IMAGES = [
+/*const ARCHIVE_IMAGES = [
   { src: sitePath('season1/img/sliderimgs/maingate.jpeg'), alt: 'Entrance to the SIU Hyderabad campus' },
   { src: sitePath('season1/img/simgs/raman.JPG'), alt: 'Season 1 speaker on the TEDxSIU Hyderabad stage' },
   { src: sitePath('season1/img/sliderimgs/audi.jpeg'), alt: 'SIU Hyderabad auditorium' },
@@ -48,23 +48,23 @@ export const LegacyBanner = () => {
             Visit Season 1 <ArrowUpRight size={14} />
           </span>
         </div>
-      </a>
+      </a>*/
 
-      <div className="container season-one-archive__summary">
-        <div>
-          <div className="season-one-archive__eyebrow"><History size={14} /> HONORING THE GENESIS</div>
-          <h2 className="editorial-heading">Before <span className="meraki-wordmark">Meraki</span>: <em>Season 1</em></h2>
-          <p>
-            The inaugural TEDxSIU Hyderabad gathering established the red circle that Season 2 now carries forward.
-          </p>
-        </div>
-        <a href={sitePath('?page=archive')} className="btn-primary cursor-target">
-          <Film size={16} />
-          Launch Season 1 Glimpse
-          <ArrowUpRight size={16} />
-        </a>
-      </div>
-    </section>
+<div className="container season-one-archive__summary">
+  <div>
+    <div className="season-one-archive__eyebrow"><History size={14} /> HONORING THE GENESIS</div>
+    <h2 className="editorial-heading">Before <span className="meraki-wordmark">Meraki</span>: <em>Season 1</em></h2>
+    <p>
+      The inaugural TEDxSIU Hyderabad gathering established the red circle that Season 2 now carries forward.
+    </p>
+  </div>
+  <a href={sitePath('?page=archive')} className="btn-primary cursor-target">
+    <Film size={16} />
+    Launch Season 1 Glimpse
+    <ArrowUpRight size={16} />
+  </a>
+</div>
+    </section >
   );
 };
 
