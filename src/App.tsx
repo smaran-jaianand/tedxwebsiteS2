@@ -18,6 +18,7 @@ import { Team } from './components/Team';
 import { SeasonOneArchive } from './components/SeasonOneArchive';
 import { LandingPreloader } from './components/LandingPreloader';
 import { PageTransition } from './components/PageTransition';
+import { ImageSkeletons } from './components/ImageSkeletons';
 import { shouldShowLandingPreloader } from './components/preloaderState';
 import { currentRoute } from './sitePath';
 
@@ -108,6 +109,7 @@ export function App() {
 
   return (
     <>
+    <ImageSkeletons />
     <div
       aria-hidden={!isSiteRevealed}
       style={{
