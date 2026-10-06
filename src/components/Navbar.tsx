@@ -50,7 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
         right: 0,
         zIndex: 100,
         transition: 'all 0.4s ease',
-        background: scrolled ? 'var(--nav-bg)' : 'transparent',
+        background: scrolled ? 'var(--nav-bg)'/*: 'transparent'*/,
         backdropFilter: scrolled ? 'blur(6px)' : 'none',
         borderBottom: scrolled ? '1px solid var(--border-subtle)' : '1px solid transparent',
         boxShadow: scrolled ? '0 4px 20px rgba(0, 0, 0, 0.4)' : 'none',
@@ -70,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
             alt="TEDxSIU Hyderabad"
             className="navbar-brand-logo"
             style={{
-              height: scrolled ? '62px' : '70px',
+              height: scrolled ? '72px' : '80px',
               width: 'auto',
               objectFit: 'contain',
               filter: 'none',
