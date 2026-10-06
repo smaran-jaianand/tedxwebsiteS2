@@ -28,7 +28,7 @@ const teamMembers = [
   { circleId: 'production', name: 'Anvi Trivedi', role: 'Member', image: 'teams/anvi-sit.jpg', align: '50% 75%' },
   { circleId: 'production', name: 'Pramit', role: 'Member', image: 'teams/Pramit.JPG', align: '50% 50%' },
   { circleId: 'production', name: 'Saanvi Chaturvedi', role: 'Member' },
-  { circleId: 'production', name: 'Aamina Azeem Baig', role: 'Member', image: '/teams/Aamina.JPG', align: '50% 40%' },
+  { circleId: 'production', name: 'Aamina Azeem Baig', role: 'Member', image: '/teams/Aamina.JPG', align: '50% 37%' },
 
   // Logistics
   { circleId: 'logistics', name: 'Smaran Jaianand', role: 'Lead', image: 'teams/smaran.jpg.jpeg', align: '50% 50%' },

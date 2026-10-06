@@ -58,7 +58,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
       }}
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        
+
         {/* TEDx Logo + Meraki pill */}
         <a
           href={isHome ? '#hero' : sitePath()}
@@ -67,10 +67,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
         >
           <img
             src={sitePath('theme/tedx_siuh_logo.png')}
-            alt="TEDx SIU Hyderabad"
+            alt="TEDxSIU Hyderabad"
             className="navbar-brand-logo"
             style={{
-              height: scrolled ? '42px' : '50px',
+              height: scrolled ? '62px' : '70px',
               width: 'auto',
               objectFit: 'contain',
               filter: 'none',
@@ -114,11 +114,11 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
               Speakers
             </a>
             <a href={sitePath('?page=team')} aria-current={activePage === 'team' ? 'page' : undefined}
-            style={{...navLinkStyle, color: activePage === 'team' ? 'var(--text-main)' : 'var(--text-muted)'}}>
+              style={{ ...navLinkStyle, color: activePage === 'team' ? 'var(--text-main)' : 'var(--text-muted)' }}>
               Team
             </a>
           </nav>
-          
+
           {/* Season 1 here opens the in-site Glimpse, not the legacy website. */}
           <div
             className="navbar-season-switcher"
@@ -144,23 +144,23 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
                 <Sparkles size={11} /><span className="season2-txt">Season 2</span>
               </a>
             ) : (
-            <span
-              aria-current="page"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '4px',
-                padding: '6px 14px',
-                fontSize: '12px',
-                color: '#ffffff',
-                background: 'var(--ted-red)',
-                borderRadius: '9999px',
-                fontWeight: 700,
-              }}
-            >
-              <Sparkles size={11} />
-              <span className="season2-txt">Season 2</span>
-            </span>
+              <span
+                aria-current="page"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  padding: '6px 14px',
+                  fontSize: '12px',
+                  color: '#ffffff',
+                  background: 'var(--ted-red)',
+                  borderRadius: '9999px',
+                  fontWeight: 700,
+                }}
+              >
+                <Sparkles size={11} />
+                <span className="season2-txt">Season 2</span>
+              </span>
             )}
             {isArchive ? (
               <span
@@ -174,26 +174,26 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
                 <History size={12} /><span className="season-txt">Season 1</span>
               </span>
             ) : (
-            <a
-              href={sitePath('?page=archive')}
-              className="cursor-target"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '4px',
-                padding: '6px 14px',
-                fontSize: '12px',
-                color: 'var(--text-muted)',
-                textDecoration: 'none',
-                borderRadius: '9999px',
-                transition: 'all 0.2s',
-                fontWeight: 500,
-              }}
-              title="Visit the Season 1 Glimpse"
-            >
-              <History size={12} />
-              <span className="season-txt">Season 1</span> <ArrowUpRight size={11} />
-            </a>
+              <a
+                href={sitePath('?page=archive')}
+                className="cursor-target"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  padding: '6px 14px',
+                  fontSize: '12px',
+                  color: 'var(--text-muted)',
+                  textDecoration: 'none',
+                  borderRadius: '9999px',
+                  transition: 'all 0.2s',
+                  fontWeight: 500,
+                }}
+                title="Visit the Season 1 Glimpse"
+              >
+                <History size={12} />
+                <span className="season-txt">Season 1</span> <ArrowUpRight size={11} />
+              </a>
             )}
           </div>
 
