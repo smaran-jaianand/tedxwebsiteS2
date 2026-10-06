@@ -50,9 +50,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
         right: 0,
         zIndex: 100,
         transition: 'all 0.4s ease',
-        background: scrolled ? 'var(--nav-bg)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(6px)' : 'none',
-        borderBottom: scrolled ? '1px solid var(--border-subtle)' : '1px solid transparent',
+        background: '#000000',
+        backdropFilter: 'none',
+        borderBottom: '1px solid var(--border-subtle)',
         boxShadow: scrolled ? '0 4px 20px rgba(0, 0, 0, 0.4)' : 'none',
         padding: scrolled ? '12px 0' : '20px 0',
       }}
@@ -80,24 +80,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
               (e.target as HTMLElement).style.display = 'none';
             }}
           />
-          <div className="navbar-brand-copy" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div className="navbar-brand-copy" style={{ display: 'flex', alignItems: 'center' }}>
             <span className="meraki-title" style={{ fontSize: '15px', color: 'var(--text-main)', letterSpacing: '0.22em' }}>
               meraki
-            </span>
-            <span
-              style={{
-                fontSize: '10px',
-                padding: '2px 8px',
-                borderRadius: '9999px',
-                background: 'rgba(235, 0, 40, 0.15)',
-                border: '1px solid rgba(235, 0, 40, 0.4)',
-                color: 'var(--ted-red-light)',
-                fontFamily: 'var(--font-mono)',
-                fontWeight: 700,
-                letterSpacing: '0.08em',
-              }}
-            >
-              9TH OCT
             </span>
           </div>
         </a>

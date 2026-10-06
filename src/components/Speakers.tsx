@@ -6,7 +6,6 @@ interface Speaker {
   name: string;
   designation: string;
   bio?: string;
-  talkTitle?: string;
   image?: string;
   position?: string;
 }
@@ -24,7 +23,6 @@ const speakers: Speaker[] = [
     designation: 'International Master of Ceremonies',
     image: 'speakers/anusha.jpg',
     position: '50% 24%',
-    talkTitle: 'The Life After the Checklist',
     bio: 'Anusha Varri is an International Master of Ceremonies, Moderator, Actor, Singer and Podcast Host. After 12.5 years in banking, she made an unexpected transition into the world of live experiences, without initially knowing the depth or responsibility of the emcee profession. What began with a microphone evolved into a career across corporate, government, protocol, sports and entertainment platforms. She has hosted prestigious events featuring leading policymakers, business leaders and celebrities, including the Vice President of India, the ICC Women’s Cricket World Cup and A.R. Rahman’s concert. A trained classical dancer and multilingual performer, Anusha continues to explore the many possibilities that can emerge when we step beyond the life we thought was already complete.',
   },
   {
@@ -32,7 +30,6 @@ const speakers: Speaker[] = [
     designation: 'YouTuber & Grade 11 Student, DPS Hyderabad',
     image: 'speakers/trishla-poogalia-optimized.jpg',
     position: '50% 25%',
-    talkTitle: 'The Imperfect Beginning',
     bio: 'At 15, Trishla is a young creative voice shaped by curiosity, expression, and the courage to explore. A Grade 11 student at DPS Hyderabad and a merit student with 95% in her Class 10 Boards, she finds herself equally drawn to Economics, public speaking and arts. Her journey with creativity began at the age of five, when she started teaching arts and crafts on camera through her YouTube channel, Arts From Heart, which has since grown to 35,000+ subscribers. Along the way, she has explored creativity through Kathak, debating, anchoring, and badminton, embracing every platform that allows her to create, perform, and communicate.',
   },
   {
@@ -54,7 +51,6 @@ const speakers: Speaker[] = [
     designation: 'Director, Heartyculture Natural Products LLP',
     image: 'speakers/saravanan-subramaniam-optimized.jpg',
     position: '50% 24%',
-    talkTitle: 'A Home Called Earth',
     bio: 'Saravanan Subramaniam is a horticulture and landscape leader with more than three decades of hands-on experience in gardening, nursery enterprise, landscape design, tree care and ecological implementation. Beginning his journey as a gardener in 1996, he has grown into a Master Gardener, entrepreneur and sustainability practitioner who combines field experience with large-scale programme leadership. He played a key role in greening Kanha Shantivanam, the 1,400-acre global headquarters of Heartfulness. Today, he serves as State Implementation Lead for the Net Zero Healthy Campus programme in Andhra Pradesh, supporting the transformation of 1,047 institutions across 28 districts. His message is simple: Nature is not a project; it is our home.',
   },
   {
@@ -65,22 +61,18 @@ const speakers: Speaker[] = [
     bio: 'Lokesh Amaravathi is the Co-founder & CEO of MAT 360, bringing a unique perspective shaped by his journey from HR leadership to entrepreneurship. His experience spans people, operations, business growth, and financial strategy, enabling him to build organizations with a strong foundation of trust and execution. Today, he works at the intersection of healthcare, cash-flow management, and sustainable growth. A Toastmasters speaker and guest lecturer at ICFAI and ISB, Lokesh actively shares insights on leadership, entrepreneurship, and professional development. He is also an alumnus of executive programs at ISB and Wharton. He believes meaningful networks, built with purpose, compound into lasting opportunities.',
   },
   {
-    name: 'Kotilingeshwar Rao V',
-    designation: 'Chief Operating Officer, Cloud4C Services',
-    image: 'speakers/koti-optimized.jpg',
-    position: '50% 30%',
-    bio: 'Kotilingeshwar Rao Vudhari is the Chief Operating Officer of Cloud4C Services. Operating at the intersection of enterprise scale and digital innovation, he concurrently serves as Vice President & COO of Cloud Infrastructure Services within the global Capgemini ecosystem. With more than two decades of pioneering leadership, he has established himself as a definitive voice in cloud computing, next-generation cybersecurity and hyper-scale business transformation. Based in Hyderabad, India, he oversees global service delivery spanning more than 25 countries. He is widely recognised for deconstructing complex technical ecosystems into secure, agile and human-centric strategies, and his leadership forms the invisible backbone that keeps critical enterprise architectures running for hundreds of organisations worldwide.',
-  },
-  {
     name: 'Manpreet Nishter',
     designation: 'Founder, MSN Studio',
     image: 'speakers/MSN.jpeg',
     position: '50% 24%',
-    bio: 'Manpreeth Singh Nishter has leveraged his 33 years of animal and environmental activism to design a vegan, zero waste, sustainable studio; which also eventually became the USP of his studio. He has used industrial waste to build a beautiful serene workspace and managed to achieve water efficiency in parallel. He has been giving talks on sustainable ceramics in India and abroad.'
+    bio: 'Manpreeth Singh Nishter has leveraged his 33 years of animal and environmental activism to design a vegan, zero waste, sustainable studio; which also eventually became the USP of his studio. He has used industrial waste to build a beautiful serene workspace and managed to achieve water efficiency in parallel. He has been giving talks on sustainable ceramics in India and abroad.',
   },
   {
     name: 'Chamala Kiran Kumar Reddy',
     designation: 'Member of Parliament, Bhongir',
+    image: 'speakers/chamala-kiran-kumar-reddy.png',
+    position: '50% 18%',
+    bio: 'Chamala Kiran Kumar Reddy (born 24 October 1974) is an Indian politician, currently a Member of Parliament in the Lok Sabha from Bhongir, Telangana. He was born in Shaligouraram Mandal, Thungathurthy Assembly constituency. Chamala Kiran Kumar Reddy topped with 100% attendance as Lok Sabha member from Telangana in participating in debates during the Parliament sessions between 24 June 2024 to 4 April 2025.',
   },
   {
     name: 'Sanjana Reddy',
@@ -176,10 +168,6 @@ export const Speakers: React.FC = () => {
                     <div className="speaker-card__copy">
                       <h3>{speaker.name}</h3>
                       <p className="speaker-card__designation">{speaker.designation}</p>
-                      <div className="speaker-card__talk">
-                        <span>Talk</span>
-                        <strong>{speaker.talkTitle ?? 'To be announced'}</strong>
-                      </div>
                     </div>
 
                     <button

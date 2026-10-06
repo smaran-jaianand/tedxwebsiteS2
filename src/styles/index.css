@@ -560,7 +560,7 @@ body {
 
 .countdown-footer {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: clamp(72px, 9vw, 118px);
   border-top: 1px solid rgba(226, 193, 124, 0.18);
   border-bottom: 1px solid rgba(226, 193, 124, 0.18);
@@ -1688,7 +1688,7 @@ body {
 .speaker-card {
   position: relative;
   min-width: 0;
-  min-height: 680px;
+  min-height: 590px;
   perspective: 1400px;
   opacity: 0;
   animation: speaker-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -2167,8 +2167,8 @@ body {
   .speakers-page__roster-heading { grid-template-columns: 1fr; gap: 10px; margin-bottom: 28px; }
   .speakers-page__roster-heading p { grid-column: 1; }
   .speaker-grid { grid-template-columns: 1fr; gap: 36px; }
-  .speaker-card { min-height: 700px; }
-  .speaker-card__portrait { flex-basis: 420px; }
+  .speaker-card { min-height: 620px; }
+  .speaker-card__portrait { flex-basis: 400px; }
   .speaker-card__copy { min-height: 0; }
   .speaker-card__back { padding: 30px 24px 24px; }
 

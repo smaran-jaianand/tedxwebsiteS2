@@ -66,7 +66,6 @@ export const Footer: React.FC = () => {
               <li><a href={homeHref('#hero')} style={footerLinkStyle}>Prologue (9th Oct)</a></li>
               <li><a href={homeHref('#theme')} style={footerLinkStyle}>The Meraki Creed</a></li>
               <li><a href={sitePath('?page=speakers')} style={footerLinkStyle}>Season 2 Speakers</a></li>
-              <li><span aria-disabled="true" style={disabledFooterLinkStyle}>Team — coming soon</span></li>
               <li><a href={homeHref('#schedule')} style={footerLinkStyle}>The Itinerary of Acts</a></li>
               <li><a href={homeHref('#venue')} style={footerLinkStyle}>SIU Hyderabad Campus</a></li>
             </ul>
@@ -169,11 +168,4 @@ const footerLinkStyle: React.CSSProperties = {
   textDecoration: 'none',
   fontSize: '14px',
   transition: 'color 0.2s ease',
-};
-
-const disabledFooterLinkStyle: React.CSSProperties = {
-  ...footerLinkStyle,
-  color: '#4b5563',
-  cursor: 'not-allowed',
-  opacity: 0.68,
 };

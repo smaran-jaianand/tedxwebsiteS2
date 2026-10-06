@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CalendarDays, Clock3, MapPin, Mic2, UsersRound } from 'lucide-react';
+import { CalendarDays, Clock3, MapPin } from 'lucide-react';
 
 const EVENT_TIME = new Date('2026-10-09T09:00:00+05:30').getTime();
 
@@ -123,8 +123,6 @@ export const CountdownSection: React.FC = () => {
         <footer className="countdown-footer">
           <EventFact icon={<CalendarDays size={17} />} label="Event date" value="09 October 2026" />
           <EventFact icon={<Clock3 size={17} />} label="Curtains rise" value="09:00 IST" />
-          <EventFact icon={<UsersRound size={17} />} label="Seated delegates" value="300" />
-          <EventFact icon={<Mic2 size={17} />} label="Maximum talk" value="18 minutes" />
           <EventFact icon={<MapPin size={17} />} label="Venue" value="SIU Hyderabad" />
         </footer>
       </div>

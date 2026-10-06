@@ -17,9 +17,9 @@ const teamMembers = [
   // Core Team
   { circleId: 'core', name: 'Dr. Rajanikanth Aluvalu', role: 'Director', image: '/teams/Prof-Rajanikanth-Aluvalu.webp' },
   { circleId: 'core', name: 'Dr. Rakesh', role: 'Faculty Mentor' },
-  { circleId: 'core', name: 'Akash Mallareddy', role: 'Curator', image: 'teams/akashsir.png', align: '50% 80%' },
   { circleId: 'core', name: 'Sujay', role: 'Organizer', image: 'teams/Sujay.JPG' },
   { circleId: 'core', name: 'Saanvi', role: 'Co-Organizer', image: '/teams/Saanvi.JPG', align: '50% 80%' },
+  { circleId: 'core', name: 'Akash Mallareddy', role: 'Curator', image: 'teams/akashsir.png', align: '50% 80%' },
   { circleId: 'core', name: 'Ravi', role: 'Executive Producer', image: 'teams/ravi-sit.jpg', align: '50% 60%' },
 
   // Production
