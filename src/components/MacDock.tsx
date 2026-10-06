@@ -15,8 +15,7 @@ interface DockItem {
 
 export const MacDock: React.FC = () => {
   const dockRef = useRef<HTMLUListElement>(null);
-  const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
-  const isHome = currentRoute() === '/';
+  const [activeTooltip, setActiveTooltip] = useState<{ title: string; xPos: number } | null>(null);  const isHome = currentRoute() === '/';
   const homeHref = (anchor: string) => (isHome ? anchor : sitePath(anchor));
 
   const dockItems: DockItem[] = [
@@ -58,10 +57,10 @@ export const MacDock: React.FC = () => {
     },
     {
       id: 'team',
-      title: 'Team · Coming soon',
+      title: 'Team Roster', // Updated the label text
       icon: Users,
-      disabled: true,
-      accentColor: '#4b5563',
+      href: sitePath('?page=team'), // Added the link to the team page
+      accentColor: 'var(--ted-red)', // Updated the color from grey to red
     },
     {
       id: 'schedule',
@@ -196,7 +195,9 @@ export const MacDock: React.FC = () => {
         <div
           style={{
             position: 'absolute',
-            top: '-38px',
+            bottom: '125px', // Pushes it safely above the fully scaled icon
+            left: `${activeTooltip.xPos}px`, // Tracks the specific hovered icon
+            transform: 'translateX(-50%)',
             background: 'var(--text-main)',
             color: 'var(--bg-dark)',
             padding: '5px 14px',
@@ -209,12 +210,13 @@ export const MacDock: React.FC = () => {
             border: '1px solid var(--border-gold)',
             boxShadow: '0 6px 18px rgba(0,0,0,0.2)',
             pointerEvents: 'none',
+            zIndex: 1000,
+            animation: 'bubbleUp 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
           }}
         >
-          {activeTooltip}
+          {activeTooltip.title}
         </div>
       )}
-
       <ul
         ref={dockRef}
         className="toolbar"
@@ -228,7 +230,7 @@ export const MacDock: React.FC = () => {
           padding: '10px 16px',
         }}
       >
-        {dockItems.map((item) => {
+        {dockItems.map((item, index) => {
           const Icon = item.icon;
           const dockLinkStyle: React.CSSProperties = {
             display: 'flex',
@@ -251,7 +253,10 @@ export const MacDock: React.FC = () => {
             <li
               key={item.id}
               className="toolbarItem"
-              onMouseEnter={() => setActiveTooltip(item.title)}
+              onMouseEnter={() => setActiveTooltip({ 
+                              title: item.title, 
+                              xPos: 41 + (index * 50) 
+                            })}
               style={{
                 width: '42px',
                 height: '42px',
@@ -281,6 +286,12 @@ export const MacDock: React.FC = () => {
           );
         })}
       </ul>
+      <style>{`
+        @keyframes bubbleUp {
+          from { opacity: 0; transform: translate(-50%, 25px); }
+          to { opacity: 1; transform: translate(-50%, 0); }
+        }
+      `}</style>
     </div>
   );
 };

@@ -3,38 +3,77 @@ import { ArrowLeft, Asterisk, CircleDot, Sparkles } from 'lucide-react';
 import { sitePath } from '../sitePath';
 
 const teamCircles = [
-  {
-    id: 'direction',
-    code: '01',
-    title: 'Direction',
-    accent: 'Vision & Stewardship',
-    description: 'The hands protecting the intent, pace and character of the experience.',
-    slots: 3,
-  },
-  {
-    id: 'curation',
-    code: '02',
-    title: 'Ideas & Curation',
-    accent: 'Research & Speaker Craft',
-    description: 'The minds shaping raw ideas into talks worthy of the red circle.',
-    slots: 4,
-  },
-  {
-    id: 'experience',
-    code: '03',
-    title: 'Experience',
-    accent: 'Production & Hospitality',
-    description: 'The people choreographing every detail before, during and beyond the stage.',
-    slots: 4,
-  },
-  {
-    id: 'story',
-    code: '04',
-    title: 'Story & Visuals',
-    accent: 'Design, Film & Communications',
-    description: 'The collective translating Meraki into images, motion, sound and memory.',
-    slots: 4,
-  },
+  { id: 'core', code: '01', title: 'Core Team', accent: 'Leadership & Vision' },
+  { id: 'production', code: '02', title: 'Production', accent: 'Stage & Execution' },
+  { id: 'logistics', code: '03', title: 'Logistics', accent: 'Operations & Planning' },
+  { id: 'communication', code: '04', title: 'Communication', accent: 'Outreach & Messaging' },
+  { id: 'sponsorship', code: '05', title: 'Sponsorships', accent: 'Partnerships & Finance' },
+  { id: 'hospitality', code: '06', title: 'Hospitality', accent: 'Guest Experience' },
+  { id: 'photography', code: '07', title: 'Photography', accent: 'Visual Documentation' },
+  { id: 'tech', code: '08', title: 'Tech', accent: 'Digital Infrastructure' },
+];
+
+const teamMembers = [
+  // Core Team
+  { circleId: 'core', name: 'Dr. Rajanikanth Aluvalu', role: 'Director', image: '/teams/Prof-Rajanikanth-Aluvalu.webp' },
+  { circleId: 'core', name: 'Dr. Rakesh', role: 'Faculty Mentor' },
+  { circleId: 'core', name: 'Akash Mallareddy', role: 'Curator', image: 'teams/akashsir.png', align: '50% 80%' },
+  { circleId: 'core', name: 'Sujay', role: 'Organizer', image: 'teams/Sujay.JPG' },
+  { circleId: 'core', name: 'Saanvi', role: 'Co-Organizer', image: '/teams/Saanvi.JPG', align: '50% 80%' },
+  { circleId: 'core', name: 'Ravi', role: 'Executive Producer', image: 'teams/ravi-sit.jpg', align: '50% 60%' },
+
+  // Production
+  { circleId: 'production', name: 'Md Zakiur Rahman', role: 'Lead', image: 'teams/Zakiur.JPG', align: '50% 60%' },
+  { circleId: 'production', name: 'Riya Shastri', role: 'Co-Lead', image: 'teams/riya-sit.jpg', align: '50% 50%' },
+  { circleId: 'production', name: 'Anvi Trivedi', role: 'Member', image: 'teams/anvi-sit.jpg', align: '50% 75%' },
+  { circleId: 'production', name: 'Pramit', role: 'Member', image: 'teams/Pramit.JPG', align: '50% 50%' },
+  { circleId: 'production', name: 'Saanvi Chaturvedi', role: 'Member' },
+  { circleId: 'production', name: 'Aamina Azeem Baig', role: 'Member' },
+
+  // Logistics
+  { circleId: 'logistics', name: 'Smaran Jaianand', role: 'Lead', image: 'teams/smaran.jpg.jpeg', align: '50% 50%' },
+  { circleId: 'logistics', name: 'Meenakshi Vedala', role: 'Co-Lead', image: 'teams/meenakshi.jpg', align: '50% 75%' },
+  { circleId: 'logistics', name: 'Sneha Gandhi', role: 'Member' },
+  { circleId: 'logistics', name: 'Aaraadhya Hruthi Reddy', role: 'Member' },
+  { circleId: 'logistics', name: 'Aparna Velpuri', role: 'Member', image: 'teams/Aparna.JPG', align: '50% 25%' },
+  { circleId: 'logistics', name: 'Madhav Singh', role: 'Member', image: 'teams/madhav.JPG', align: '50% 35%' },
+  { circleId: 'logistics', name: 'Adwita Pravish', role: 'Member', image: 'teams/adwita.jpg', align: '50% 100%' },
+  { circleId: 'logistics', name: 'Aditya Sampara', role: 'Member', image: 'teams/Aditya.JPG', align: '50% 40%' },
+
+  // Communication
+  { circleId: 'communication', name: 'Sandhya H.S', role: 'Lead' },
+  { circleId: 'communication', name: 'Mytreyi Eranki', role: 'Co-Lead' },
+  { circleId: 'communication', name: 'Lakshmi Srujana', role: 'Member', image: 'teams/Srujana.JPG', align: '50% 45%' },
+  { circleId: 'communication', name: 'Anwita Rudravaram', role: 'Member', image: 'teams/Anwita.JPG', align: '50% 43%' },
+  { circleId: 'communication', name: 'Annanya Mishra', role: 'Member', image: 'teams/Annanya.JPG' },
+  { circleId: 'communication', name: 'Mannan', role: 'Member' },
+  { circleId: 'communication', name: 'Saanvi Jhaveri', role: 'Member' },
+  { circleId: 'communication', name: 'Diva Maheshwari', role: 'Member' },
+
+  // Sponsorships
+  { circleId: 'sponsorship', name: 'Advika A', role: 'Lead', image: 'teams/advika.JPG', align: '50% 43%' },
+  { circleId: 'sponsorship', name: 'Divya Patel', role: 'Co-Lead' },
+  { circleId: 'sponsorship', name: 'Anushka Aswal', role: 'Member' },
+  { circleId: 'sponsorship', name: 'Akshat Jain', role: 'Member' },
+  { circleId: 'sponsorship', name: 'Nikhila Kolla', role: 'Member', image: 'teams/Nikhila.JPG', align: '50% 45%' },
+  { circleId: 'sponsorship', name: 'Deepika Mishra', role: 'Member', image: 'teams/Deepika.JPG', align: '50% 40%' },
+
+  // Hospitality
+  { circleId: 'hospitality', name: 'Anuja Choudhury', role: 'Lead', image: 'teams/anuja.jpg', align: '50% 55%' },
+  { circleId: 'hospitality', name: 'Aditi Bhalsing', role: 'Co-Lead', image: 'teams/aditi.jpg', align: '50% 65%' },
+  { circleId: 'hospitality', name: 'Sri Snigdha', role: 'Member' },
+  { circleId: 'hospitality', name: 'Hasini Kurikala', role: 'Member', image: 'teams/hasini-sit.jpg', align: '50% 80%' },
+  { circleId: 'hospitality', name: 'BNV Manasvini Chinta', role: 'Member', image: 'teams/Manasvini.JPG', align: '50% 40%' },
+  { circleId: 'hospitality', name: 'Sri Kruthi Nimmagadda', role: 'Member' },
+  { circleId: 'hospitality', name: 'Kolavennu Shreya Vaishnavi', role: 'Member', image: 'teams/vaishnavi.jpg', align: '50% 75%' },
+  { circleId: 'hospitality', name: 'Adyasha Mohapatra', role: 'Member' },
+  { circleId: 'hospitality', name: 'Sanvy Pandey', role: 'Member' },
+
+  // Photography
+  { circleId: 'photography', name: 'Subhanan Chatterjee', role: 'Lead', image: 'teams/Subhanan.JPG', align: '50% 85%' },
+
+  // Tech
+  { circleId: 'tech', name: 'Divyansh M', role: 'Lead', image: 'teams/Divyansh.JPG', align: '50% 45%' },
 ];
 
 export const Team: React.FC = () => (
@@ -95,49 +134,98 @@ export const Team: React.FC = () => (
     </nav>
 
     <div className="container team-page__groups">
-      {teamCircles.map((circle, circleIndex) => (
-        <section className="team-circle" id={`team-${circle.id}`} key={circle.id}>
-          <header className="team-circle__header">
-            <span>{circle.code} / 04</span>
-            <div>
-              <p className="team-circle__accent">{circle.accent}</p>
-              <h2 className="editorial-heading">{circle.title}</h2>
-              <p>{circle.description}</p>
+      {teamCircles.map((circle, circleIndex) => {
+        const circleMembers = teamMembers.filter(member => member.circleId === circle.id);
+
+        return (
+          <section className="team-circle" id={`team-${circle.id}`} key={circle.id}>
+            <header
+              className="team-circle__header"
+              style={{
+                position: 'relative',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '100%'
+              }}
+            >
+              <span style={{ position: 'absolute', left: 0 }}>
+                {circle.code} / 08
+              </span>
+              <div style={{ textAlign: 'center' }}>
+                <p className="team-circle__accent">{circle.accent}</p>
+                <h2 className="editorial-heading">{circle.title}</h2>
+              </div>
+            </header>
+
+            <div
+              className="team-circle__grid"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gap: '24px'
+              }}
+            >
+              {circleMembers.map((member, slotIndex) => {
+                const number = teamMembers.findIndex(m => m === member) + 1;
+
+                return (
+                  <article
+                    className="team-member-card"
+                    key={`${circle.id}-${slotIndex}`}
+                    style={{
+                      '--team-slot': slotIndex,
+                      '--team-angle': `${(slotIndex * 37 + circleIndex * 19) % 100}%`,
+                    } as React.CSSProperties}
+                  >
+                    <div
+                      className="team-member-card__visual"
+                      aria-hidden="true"
+                      style={{
+                        position: 'relative', // Traps the absolute image inside this box
+                        overflow: 'hidden'    // Cuts off any extra image that tries to bleed out
+                      }}
+                    >
+                      <span className="team-member-card__halo" />
+
+                      {member.image ? (
+                        <img
+                          src={sitePath(member.image)}
+                          alt={member.name}
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            objectPosition: member.align || '50% 20%',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            zIndex: 0, // Lowered to 0 so the index number and scanlines float ON TOP of the photo
+                            borderRadius: 'inherit'
+                          }}
+                        />
+                      ) : (
+                        <span className="team-member-card__silhouette" />
+                      )}
+
+                      <span className="team-member-card__scan" />
+                      <span className="team-member-card__index">{String(number).padStart(2, '0')}</span>
+                    </div>
+
+                    {/* Restored text block that was deleted */}
+                    <div className="team-member-card__copy">
+                      <span>{circle.accent}</span>
+                      <h3>{member.name}</h3>
+                      <p>{member.role}</p>
+                    </div>
+
+                  </article>
+                );
+              })}
             </div>
-          </header>
-
-          <div className="team-circle__grid">
-            {Array.from({ length: circle.slots }, (_, slotIndex) => {
-              const number = teamCircles
-                .slice(0, circleIndex)
-                .reduce((total, item) => total + item.slots, 0) + slotIndex + 1;
-
-              return (
-                <article
-                  className="team-member-card team-member-card--placeholder"
-                  key={`${circle.id}-${slotIndex}`}
-                  style={{
-                    '--team-slot': slotIndex,
-                    '--team-angle': `${(slotIndex * 37 + circleIndex * 19) % 100}%`,
-                  } as React.CSSProperties}
-                >
-                  <div className="team-member-card__visual" aria-hidden="true">
-                    <span className="team-member-card__halo" />
-                    <span className="team-member-card__silhouette" />
-                    <span className="team-member-card__scan" />
-                    <span className="team-member-card__index">{String(number).padStart(2, '0')}</span>
-                  </div>
-                  <div className="team-member-card__copy">
-                    <span>{circle.accent}</span>
-                    <h3>Profile incoming</h3>
-                    <p>Name and portrait will be revealed with the official roster.</p>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </section>
-      ))}
+          </section>
+        );
+      })}
 
       <aside className="team-page__closing">
         <span>15 signals · one frequency</span>

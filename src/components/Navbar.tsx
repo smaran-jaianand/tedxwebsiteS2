@@ -29,17 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
 
   const isHome = activePage === 'home';
   const isArchive = activePage === 'archive';
-  const disabledNavLinkStyle: React.CSSProperties = {
-    color: '#525866',
-    fontFamily: 'var(--font-mono)',
-    fontSize: '11px',
-    fontWeight: 700,
-    letterSpacing: '0.08em',
-    textTransform: 'uppercase',
-    cursor: 'not-allowed',
-    opacity: 0.62,
-    userSelect: 'none',
-  };
+
   const navLinkStyle: React.CSSProperties = {
     color: activePage === 'speakers' ? 'var(--text-main)' : 'var(--text-muted)',
     fontFamily: 'var(--font-mono)',
@@ -78,11 +68,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
           <img
             src={sitePath('theme/tedx_siuh_logo.png')}
             alt="TEDx SIU Hyderabad"
+            className="navbar-brand-logo"
             style={{
-              height: '34px',
+              height: scrolled ? '42px' : '50px',
               width: 'auto',
               objectFit: 'contain',
               filter: 'none',
+              transition: 'height 0.3s ease',
             }}
             onError={(e) => {
               (e.target as HTMLElement).style.display = 'none';
@@ -121,7 +113,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
             >
               Speakers
             </a>
-            <span aria-disabled="true" title="Team page coming soon" style={disabledNavLinkStyle}>Team</span>
+            <a href={sitePath('?page=team')} aria-current={activePage === 'team' ? 'page' : undefined}
+            style={{...navLinkStyle, color: activePage === 'team' ? 'var(--text-main)' : 'var(--text-muted)'}}>
+              Team
+            </a>
           </nav>
           
           {/* Season 1 here opens the in-site Glimpse, not the legacy website. */}
@@ -234,6 +229,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage }) => {
 
       <style>{`
         @media (max-width: 600px) {
+          .navbar-brand-logo { height: 38px !important; }
           .season-txt { display: none; }
           .navbar-brand-copy,
           .navbar-claim-pass { display: none !important; }

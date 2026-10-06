@@ -74,6 +74,9 @@ const speakers: Speaker[] = [
   {
     name: 'Manpreet Nishter',
     designation: 'Founder, MSN Studio',
+    image: 'speakers/MSN.jpeg',
+    position: '50% 24%',
+    bio: 'Manpreeth Singh Nishter has leveraged his 33 years of animal and environmental activism to design a vegan, zero waste, sustainable studio; which also eventually became the USP of his studio. He has used industrial waste to build a beautiful serene workspace and managed to achieve water efficiency in parallel. He has been giving talks on sustainable ceramics in India and abroad.'
   },
   {
     name: 'Chamala Kiran Kumar Reddy',
@@ -85,6 +88,13 @@ const speakers: Speaker[] = [
     image: 'speakers/sanjana-reddy-optimized.jpg',
     position: '50% 24%',
     bio: 'Sanjana Reddy is an entrepreneur, educationist and leader whose professional journey spans infrastructure, marketing and education. She is a Partner and Marketing Head at Sri Sreenivasa Infra, Hyderabad, and the Founder, President and Correspondent of Westbrook International School, Hyderabad. Her journey in education is driven by a strong belief that every child deserves access to quality education and the opportunity to dream big, irrespective of their family’s financial background. Through Westbrook International School, Sanjana Reddy is working towards making an international curriculum accessible at an affordable price point, with the belief that no child should be left behind simply because their parents cannot afford a premium education.',
+  },
+  {
+    name: 'Vivek Dubey',
+    designation: 'Founder, Curvet AI',
+    image: 'speakers/Vivek Dubey.png',
+    position: '50% 24%',
+    bio: 'Vivek Dubey is a second-time founder and technologist who has previously worked at Google, Microsoft, and Infosys. His journey across global technology companies and entrepreneurship has given him a unique perspective on how ideas turn into products, businesses, and real-world impact. Today, as the founder of Curvet, he is working to reduce the gap between intent and execution by making artificial intelligence more accessible and useful. Having experienced both the structure of large organisations and the uncertainty of building from scratch, Vivek brings a builder’s perspective on AI, entrepreneurship, resilience, and what it takes to create in a rapidly changing world.',
   },
 ];
 
