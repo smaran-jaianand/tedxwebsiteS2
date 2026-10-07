@@ -27,7 +27,7 @@ const teamMembers = [
   { circleId: 'production', name: 'Riya Shastri', role: 'Co-Lead', image: 'teams/riya-sit.jpg', align: '50% 50%' },
   { circleId: 'production', name: 'Anvi Trivedi', role: 'Member', image: 'teams/anvi-sit.jpg', align: '50% 75%' },
   { circleId: 'production', name: 'Pramit', role: 'Member', image: 'teams/Pramit.JPG', align: '50% 50%' },
-  { circleId: 'production', name: 'Saanvi Chaturvedi', role: 'Member' },
+  { circleId: 'production', name: 'Saanvi Chaturvedi', role: 'Member', image: 'teams/sanvychaturvedi.jpeg', align: '50% 40%' },
   { circleId: 'production', name: 'Aamina Azeem Baig', role: 'Member', image: 'teams/Aamina.JPG', align: '50% 37%' },
 
   // Logistics
@@ -41,8 +41,8 @@ const teamMembers = [
   { circleId: 'logistics', name: 'Aditya Sampara', role: 'Member', image: 'teams/Aditya.JPG', align: '50% 40%' },
 
   // Communication
-  { circleId: 'communication', name: 'Sandhya H.S', role: 'Lead' },
-  { circleId: 'communication', name: 'Mytreyi Eranki', role: 'Co-Lead' },
+  { circleId: 'communication', name: 'Sandhya H.S', role: 'Lead', image: 'teams/sandhya.jpeg', align: '50% 95%' },
+  { circleId: 'communication', name: 'Mytreyi Eranki', role: 'Co-Lead', image: 'teams/mytreyi.jpeg', align: '50% 100%' },
   { circleId: 'communication', name: 'Lakshmi Srujana', role: 'Member', image: 'teams/Srujana.JPG', align: '50% 45%' },
   { circleId: 'communication', name: 'Anwita Rudravaram', role: 'Member', image: 'teams/Anwita.JPG', align: '50% 43%' },
   { circleId: 'communication', name: 'Annanya Mishra', role: 'Member', image: 'teams/Annanya.JPG' },
@@ -52,8 +52,8 @@ const teamMembers = [
 
   // Sponsorships
   { circleId: 'sponsorship', name: 'Advika A', role: 'Lead', image: 'teams/advika.JPG', align: '50% 43%' },
-  { circleId: 'sponsorship', name: 'Divya Patel', role: 'Co-Lead' },
-  { circleId: 'sponsorship', name: 'Anushka Aswal', role: 'Member' },
+  { circleId: 'sponsorship', name: 'Divya Patel', role: 'Co-Lead', image: 'teams/divya.jpeg', align: '50% 40%' },
+  { circleId: 'sponsorship', name: 'Anushka Aswal', role: 'Member', image: 'teams/anushkaaswal.jpeg', align: '50% 25%' },
     { circleId: 'sponsorship', name: 'Akshat Jain', role: 'Member', image: 'teams/IMG_7491.JPG', align: '50% 35%' },
   { circleId: 'sponsorship', name: 'Nikhila Kolla', role: 'Member', image: 'teams/Nikhila.JPG', align: '50% 45%' },
   { circleId: 'sponsorship', name: 'Deepika Mishra', role: 'Member', image: 'teams/Deepika.JPG', align: '50% 40%' },
@@ -65,7 +65,7 @@ const teamMembers = [
   { circleId: 'hospitality', name: 'Hasini Kurikala', role: 'Member', image: 'teams/hasini-sit.jpg', align: '50% 80%' },
   { circleId: 'hospitality', name: 'BNV Manasvini Chinta', role: 'Member', image: 'teams/Manasvini.JPG', align: '50% 40%' },
   { circleId: 'hospitality', name: 'Sri Kruthi Nimmagadda', role: 'Member', image: 'teams/IMG_7466.JPG', align: '50% 10 %' },
-  { circleId: 'hospitality', name: 'Kolavennu Shreya Vaishnavi', role: 'Member' },
+  { circleId: 'hospitality', name: 'Kolavennu Shreya Vaishnavi', role: 'Member', image: 'teams/shreya.jpeg', align: '50% 0.5%' },
   { circleId: 'hospitality', name: 'Adyasha Mohapatra', role: 'Member', image: 'teams/IMG_7468.JPG', align: '50% 55%' },
   { circleId: 'hospitality', name: 'Sanvy Pandey', role: 'Member', image: 'teams/IMG_7476.JPG', align: '50% 27%' },
 
