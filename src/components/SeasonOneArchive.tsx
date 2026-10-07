@@ -17,6 +17,8 @@ const SPEAKERS = [
     role: 'Pro Chancellor · Symbiosis International (Deemed University)',
     image: 'season1/img/simgs/vidya.png',
     note: 'An education leader whose work has helped grow Symbiosis into a globally connected academic community.',
+    talk: 'Beyond Horizons: Overcoming Personal Limits',
+    video: 'https://www.youtube.com/watch?v=__w5-RVpvGM',
   },
   {
     name: 'Dr. Ramakrishnan Raman',
@@ -31,24 +33,32 @@ const SPEAKERS = [
     role: 'Supply Chain & Sustainability · IBM Consulting',
     image: 'season1/img/simgs/sandeep.jpg',
     note: 'A supply-chain and sustainability practitioner working where responsible systems meet business transformation.',
+    talk: 'It is Beautiful to Love the Ordinary',
+    video: 'https://www.youtube.com/watch?v=UINYSJ--ySU',
   },
   {
     name: 'Harsha Durugadda',
     role: 'Sculptor',
     image: 'season1/img/simgs/harsha-d.jpg',
     note: 'An award-winning sculptor whose practice moves between material, public space and the way we experience art.',
+    talk: 'Sculpture as a Vessel for the Invisible',
+    video: 'https://www.youtube.com/watch?v=2hVPBbvKxko',
   },
   {
     name: 'Saurabh Sharma',
     role: 'Managing Director · JSSB Legal',
     image: 'season1/img/simgs/saurabh.jpeg',
     note: 'An advocate and legal leader bringing two decades of experience to conversations about law, enterprise and society.',
+    talk: 'Be Different and Believe in Yourself',
+    video: 'https://www.youtube.com/watch?v=u4XDoM_-pSY',
   },
   {
     name: 'Emmanuel Gosula',
     role: 'Senior Manager, People Partner · EPAM Systems',
     image: 'season1/img/simgs/emmanual.jpeg',
     note: 'A people leader focused on culture, talent and the human systems that make ambitious organisations work.',
+    talk: 'Building Futures Because Someone Built Mine',
+    video: 'https://www.youtube.com/watch?v=YPtgcdnLdyA',
   },
   {
     name: 'Kumar Rajagopalan',
@@ -87,6 +97,8 @@ const SPEAKERS = [
     role: 'Founder & CEO · QED Classes',
     image: 'season1/img/simgs/ansuman.jpg',
     note: 'An educator and mentor known for making demanding ideas approachable, memorable and alive for learners.',
+    talk: 'Why?: A Tag on the Journey from Entrepreneur to Teacher',
+    video: 'https://www.youtube.com/watch?v=VMClm8OOW6A',
   },
 ];
 
@@ -184,17 +196,19 @@ export const SeasonOneArchive = () => (
               <h3>{speaker.name}</h3>
               {speaker.talk && <p className="s1-speaker__talk">“{speaker.talk}”</p>}
               <p className="s1-speaker__note">{speaker.note}</p>
-              <a
-                className="s1-speaker__watch cursor-target"
-                href={speaker.video || SEASON_FILM}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${speaker.video ? 'Watch talk by' : 'Watch the Season 1 film featuring'} ${speaker.name}`}
-              >
-                <Play size={14} fill="currentColor" />
-                {speaker.video ? 'Watch the talk' : 'Watch the season film'}
-                <ArrowUpRight size={15} />
-              </a>
+              {speaker.video && (
+                <a
+                  className="s1-speaker__watch cursor-target"
+                  href={speaker.video}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Watch talk by ${speaker.name}`}
+                >
+                  <Play size={14} fill="currentColor" />
+                  Watch the talk
+                  <ArrowUpRight size={15} />
+                </a>
+              )}
             </div>
           </article>
         ))}

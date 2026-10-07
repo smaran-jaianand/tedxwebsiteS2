@@ -4,13 +4,13 @@ import { sitePath } from '../sitePath';
 
 const ARCHIVE_IMAGES = [
   { src: sitePath('season1/img/sliderimgs/maingate.jpeg'), alt: 'Entrance to the SIU Hyderabad campus' },
-  { src: sitePath('season1/img/simgs/raman.JPG'), alt: 'Season 1 speaker on the TEDxSIU Hyderabad stage' },
+  { src: sitePath('season1/img/sliderimgs/hostel.jpeg'), alt: 'SIU Hyderabad campus residence halls' },
   { src: sitePath('season1/img/sliderimgs/audi.jpeg'), alt: 'SIU Hyderabad auditorium' },
   { src: sitePath('season1/img/simgs/harsha-d.jpg'), alt: 'Season 1 sculptor Harsha Durugadda' },
   { src: sitePath('season1/img/sliderimgs/insideaudi.jpeg'), alt: 'Inside the Season 1 auditorium' },
   { src: sitePath('season1/img/simgs/Madhavi.jpg'), alt: 'Season 1 speaker Galla Madhavi' },
   { src: sitePath('season1/img/sliderimgs/allhostels.jpeg'), alt: 'SIU Hyderabad campus buildings' },
-  { src: sitePath('season1/img/simgs/anjan.jpg'), alt: 'Season 1 speaker Anjaneyulu Pillalamarri' },
+  { src: sitePath('season1/img/sliderimgs/insideaudi.jpeg'), alt: 'Inside the SIU Hyderabad auditorium' },
 ];
 
 export const LegacyBanner = () => {
